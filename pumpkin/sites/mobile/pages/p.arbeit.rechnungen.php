@@ -27,7 +27,7 @@
 							<td><a href="?p=arbeit.rechnungen.edit&id=<?=$aa['id'];?>"><?=$aa['id'];?></a></td>
 							<td><?=$aa['bis'];?></td>
 							<td><?=number_format(getRechnungsTotal($aa['id']),2,",","`");?></td>
-							<td><a href="<?=SITE_HTML;?>/actions.php?a=changeBillStatus&b=<?=$aa['id'];?>&s=<?=$aa['status'];?>"><img src="/user/images/<?=getStatus($aa['status']);?>" border="0" title="<?=getVertragTitle($aa['vertrag']);?>" /></a></td>
+							<td><a href="<?=SITE_HTML;?>/actions.php?a=changeBillStatus&b=<?=$aa['id'];?>&s=<?=$aa['status'];?>"><img src="pumpkin/user/images/<?=getStatus($aa['status']);?>" border="0" title="<?=getVertragTitle($aa['vertrag']);?>" /></a></td>
 							<td><a href="<?=USER_ACT;?>/print.bill.php?nr=<?=$aa['id'];?>&a=BillPDF">PDF</a></td>
 						</tr>
 					<? } ?>
