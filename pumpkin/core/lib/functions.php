@@ -11,6 +11,5 @@
 		$includes[] = $r['file'];
 	}
 	foreach($includes as $i) { require_once($i); }
-	require_once(PMKROOT.'/core/CPumpkinList/functions.CPumpkinList.php');
 	require_once(PMKROOT.'/core/addons/googlechart/gChart2.php');
 ?>
