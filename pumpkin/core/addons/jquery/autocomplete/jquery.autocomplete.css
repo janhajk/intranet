@@ -1,0 +1,37 @@
+.jqac-menu{
+  font-size: 9px;
+  color: black;
+  background-color: white;
+  border: 1px solid #aaa;
+  text-align:left;
+  font-weight:bold;
+}
+.jqac-menu ul{
+  list-style: none;
+  margin: 1px;
+  padding: 1px;
+  overflow: hidden;
+}
+.jqac-menu .jqac-link {
+  cursor: pointer;
+  display: block;
+}
+.jqac-menu .jqac-highlight {
+  background-color: #ddf;
+}
+.jqac-menu .jqac-warning {
+  font-style: italic;
+}
+.jqac-menu em {
+    text-decoration: underline;
+}
+.jqac-menu .jqac-info {
+    text-align: right;
+    font-style: italic;
+    font-size: 0.95em;
+    color: #222;
+	font-weight:normal;
+}
+.jqac-menu span {
+	border-bottom:#DDD 1px solid;
+}

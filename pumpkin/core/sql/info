@@ -1,0 +1,7 @@
+This are the .sql files that are executed to install the
+sepcific sql table
+the function to check, wether a table exists or not
+can be found in:
+pumpkin/core/lib/functions.install.php
+
+-> pmkInstallDbTable() // to check and install if required

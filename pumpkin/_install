@@ -1,0 +1,3 @@
+Install
+1) edit config.php
+2) set permission of pumpkin/tmp to 777

@@ -1,0 +1,13 @@
+This is the core function library
+lib.php is called to load all the necessary funcitons.
+
+calling lib.php does the following
+
+1) starts the session
+2) load DB Class
+3) load functions
+	3.1) load functions.php
+		3.1.1) Load all functions.* files from both lib and user/lib
+		3.1.2) Loads addons
+4) logs the user in (yes, every time!)
+5) offers the termination function for this library
