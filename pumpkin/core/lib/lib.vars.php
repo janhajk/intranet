@@ -29,7 +29,7 @@
 	// Global PMKHTTP
 	// HTTP Adresse von pumpkin relativ zu domain sans trailing '/' 
 	// Bsp: http://www.ihredomain.ch/utils/pumpkin -> utils/pumpkin
-	$key1 = array_search('httpdocs',$proot);
+	$key1 = array_search('intranet',$proot);
 	$key2 = array_search('pumpkin',$proot);
 	$pmkroot = '';
 	for($i=$key1+1;$i<=$key2;$i++) { $pmkroot .= $proot[$i].'/'; }
