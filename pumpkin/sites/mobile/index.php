@@ -50,7 +50,9 @@
             /*
              * Ende Startseite / Default-Seite
              */
-            include (PMKROOT.'/parts/footer.php');
         ?>
+        <div class="box" style="text-align:center;font-size:7pt;">
+            Pumpkin-Framework is &copy; 2009 by Jan Sch&auml;r (<a href="mailto:jan.schaer@janschaer.ch">Jan Schär</a>)
+        </div>
     </body>
 </html>
