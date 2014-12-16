@@ -13,8 +13,7 @@
         <?=getCSS();?>
         <?=loadJSTimeline();?>
     </head>
-    <body>
-        <?=onLoadTimeline();?>" onresize="">
+    <body <?=onLoadTimeline();?> onresize="">
         <?php
             if(isset($_SESSION['msg'])){
                 echo "<div class=\"msg\">".$_SESSION['msg']."</div>";
