@@ -40,7 +40,7 @@
                echo (canEnterBinary('0.0.0.0.0.0.0.0.1.1'))?makeElement('News', '<div>Fondwert:&nbsp;CHF&nbsp;'.stocks_totalFonds().'.-</div>'):'';
                             $code = "<ul>";
                             foreach($pages as $k=>$p) {
-                                if($k!='File') {$code .= '<li><a href="?p='.$p.'">'.$k.'</a></li>';}
+                                $code .= '<li><a href="?p='.$p.'">'.$k.'</a></li>';
                             }
                             $code .= '</ul>';
                 makeElement('Seiten', $code);

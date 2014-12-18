@@ -13,7 +13,7 @@
 // LIB schliessen GLOBAL
 // von alten Scripts
 	$ENDLIB = dirname(__FILE__).'/lib.end.php';
-// f�r alle neuen Scripts
+// für alle neuen Scripts
 	define('ENDLIB', dirname(__FILE__).'/lib.end.php');
 
 // Benutzer wird bei jedem Aufruf einer Seite/Aktion erneut eingeloggt
