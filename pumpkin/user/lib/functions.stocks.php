@@ -99,7 +99,8 @@ function searchKurs($search, $url, $day=0) {
 	$search = str_replace("%m", $dm, $search);
 	$search = str_replace("%d", $dd, $search);
 	echo $search;
-	$content = file_get_contents($url);		
+	$content = file_get_contents($url);
+    $content = str_replace('\'', '', $content); // Tausender Apostroph entfernen
 	preg_match($search, $content, $treffer);
 	if (count($treffer)>=2) {return $treffer[1];} else { return false; }
 }
