@@ -7,7 +7,7 @@
 			<ul>
 				<li><a href="<?=PMKHTTP;?>/actions.php?a=UpdateHt">Update htpasswd</a></li>
 				<li>Backup <a href="<?=PMKHTTP;?>/actions.php?a=backup&bkpD=1&bkpF=0">DB</a>...<a href="<?=PMKHTTP;?>/actions.php?a=backup&bkpD=1&bkpF=1">all</a></li>
-				<li><form action="<?=PMKHTTP;?>/actions.php" method="post"><input type="submit" value="Update Includes" /><input type="hidden" name="a" value="updateIncludes" /></form></li>
+				<li><form action="<?=SITE_HTML;?>/actions.php" method="post"><input type="submit" value="Update Includes" /><input type="hidden" name="a" value="updateIncludes" /></form></li>
 			</ul>
         </div>
     </div>

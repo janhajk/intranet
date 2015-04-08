@@ -61,6 +61,6 @@ function getCSS($site='mobile') {
 	$db = $GLOBALS['db'];
 	$db->query('SELECT `content` FROM `pmkCSS` WHERE `site` = \''.$site.'\' LIMIT 0,1');
 	$content = $db->results();
-	return '<style type="text/css">'.$content['content'].'</style>';	
+	return '<style type="text/css">'.$content['content'].'</style>';
 }
 ?>
