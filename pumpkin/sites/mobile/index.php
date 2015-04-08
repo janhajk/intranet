@@ -36,13 +36,13 @@
            /*
             * Startseite / Default-Seite
             */
-           if(!isset($_GET[$page]) || $_GET[$page]=='') {
-               echo (canEnterBinary('0.0.0.0.0.0.0.0.1.1'))?makeElement('News', '<div>Fondwert:&nbsp;CHF&nbsp;'.stocks_totalFonds().'.-</div>'):'';
-                            $code = "<ul>";
-                            foreach($pages as $k=>$p) {
-                                $code .= '<li><a href="?p='.$p.'">'.$k.'</a></li>';
-                            }
-                            $code .= '</ul>';
+            if(!isset($_GET[$page]) || $_GET[$page]=='') {
+                echo (canEnterBinary('0.0.0.0.0.0.0.0.1.1'))?makeElement('News', '<div>Fondwert:&nbsp;CHF&nbsp;'.stocks_totalFonds().'.-</div>'):'';
+                $code = '<ul class="menu">';
+                foreach($pages as $k=>$p) {
+                    $code .= '<li><a href="?p='.$p.'"><div class="icon" style="background-image:url(user/images/icons/'.$k.'.png')">'.$k.'</div></a></li>';
+                }
+                $code .= '</ul>';
                 makeElement('Seiten', $code);
                 $code = getRandomScripture();
                 echo makeElement('Zuf&auml;llige Schriftstelle', $code);

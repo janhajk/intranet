@@ -20,8 +20,8 @@ function makeElement($title, $content) {
 $pages = array(
 	'Kurse'		=>1,
 	'Arbeit'	=>2,
-	'psw'		=>3, 
-  	'diverses'	=>11, 
+	'psw'		=>3,
+  	'diverses'	=>11,
 	'admin'		=>12
 );
 ?>
