@@ -18,10 +18,10 @@ function makeElement($title, $content) {
 }
 
 $pages = array(
-	'Kurse'		=>1,
-	'Arbeit'	=>2,
-	'psw'		=>3,
-  	'diverses'	=>11,
-	'admin'		=>12
+	'Kurse'		=> array(1, 'Kurse', 'Aktuelle Fondskurse'),
+	'Arbeit'	=> array(2, 'Firma', 'Stundenrapporte, Rechnungen etc.'),
+	'psw'		=> array(3, 'Passwort', 'Passwortkarte'),
+  	'diverses'	=> array(4, 'Diverses', 'Buch Mormon'),
+	'admin'		=> array(5, 'Admin', 'Adminstration Tools')
 );
 ?>

@@ -1,5 +1,5 @@
 <? // Passwort Karte/ psw ?>
-<? if(isset($_GET[$page]) && $_GET[$page] == $pages['psw'] && canEnterBinary('0.0.0.0.0.0.0.0.0.1')) { ?>
+<? if(isset($_GET[$page]) && $_GET[$page] == $pages['psw'][0] && canEnterBinary('0.0.0.0.0.0.0.0.0.1')) { ?>
     <?=link_back_head('');?>
     <div class="box">
 <style type="text/css" media="all">

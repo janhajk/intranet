@@ -1,5 +1,5 @@
 <? // admin Seite ?>
-<? if(isset($_GET[$page]) && $_GET[$page] == $pages['admin'] && canEnterBinary('0.0.0.0.0.0.0.0.0.1')) { ?>
+<? if(isset($_GET[$page]) && $_GET[$page] == $pages['admin'][0] && canEnterBinary('0.0.0.0.0.0.0.0.0.1')) { ?>
     <?=link_back_head('');?>
     <div class="box">
         <div class="title">admin</div>

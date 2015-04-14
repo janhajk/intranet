@@ -1,5 +1,5 @@
 <? // Geld Seite ?>
-<? if(isset($_GET[$page]) && $_GET[$page] == $pages['Kurse'] && canEnterBinary('0.0.0.0.0.0.0.0.0.1')) { ?>
+<? if(isset($_GET[$page]) && $_GET[$page] == $pages['Kurse'][0] && canEnterBinary('0.0.0.0.0.0.0.0.0.1')) { ?>
     
     <script type="text/javascript" src="http://www.google.com/jsapi"></script>
     <script type="text/javascript">

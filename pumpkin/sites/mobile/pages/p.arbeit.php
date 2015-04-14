@@ -1,5 +1,5 @@
 <? // Arbeit Seite ?>
-<? if(isset($_GET[$page]) && $_GET[$page] == $pages['Arbeit'] && canEnterBinary('0.0.0.0.1.0.0.0.0.1')) { ?>
+<? if(isset($_GET[$page]) && $_GET[$page] == $pages['Arbeit'][0] && canEnterBinary('0.0.0.0.1.0.0.0.0.1')) { ?>
     <?=link_back_head('');?>
     <div class="box">
         <div class="title">Arbeit</div>

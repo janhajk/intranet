@@ -71,9 +71,9 @@
                     <div class="list-group-item">&nbsp;</div><?php
                 }
                 foreach($pages as $k=>$p) {?>
-                    <a href="?p=<?php echo $p; ?>" class="list-group-item">
-                        <h4 class="list-group-item-heading"><?php echo $k; ?></h4>
-                        <p class="list-group-item-text"></p>
+                    <a href="?p=<?php echo $p[0]; ?>" class="list-group-item">
+                        <h4 class="list-group-item-heading"><?php echo $p[1]; ?></h4>
+                        <p class="list-group-item-text"><?php echo $p[2]; ?></p>
                     </a>
                 <?php
                 } ?>
