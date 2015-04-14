@@ -40,12 +40,13 @@
     <div class="container">
         <a href="index.php" role="button" class="btn btn-default btn-sm btn-block">back</a>
         <h2>Kurse</h2>
-        <a href="<?=USER_ACT;?>/cronjob.stocks.php"><span class="glyphicon glyphicon-refresh"></span></a>; Total Value: <?=pmkCurrency(stocks_totalFonds()); ?>
+        <p><a href="<?=USER_ACT;?>/cronjob.stocks.php"><span class="glyphicon glyphicon-refresh"></span></a></p>
+        <p>Total Value: <?=pmkCurrency(stocks_totalFonds()); ?></p>
 		<?php
 		foreach($kurven as $g) {
 		?>
         <div>
-            <h3><a href="<?=$g['url'];?>"><?=$g['descr'];?></a></h3>
+            <p><a href="<?=$g['url'];?>"><?=$g['descr'];?></a></p>
             <div id="visualization<?=$g['id'];?>" style="width: 80%; height: 200px;"></div>
         </div>
 		<? } ?>
