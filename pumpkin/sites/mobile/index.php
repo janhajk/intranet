@@ -68,7 +68,7 @@
                         $code .= '</div><div class="row">';
                         $i = 0;
                     }
-                    $code .= '<div class="col-sm-3"><a href="?p='.$p.'" class="btn btn-default">'.$k.'</a></div>';
+                    $code .= '<div class="col-sm-3"><a href="?p='.$p.'" class="btn btn-default btn-block">'.$k.'</a></div>';
                     $i++;
                 }
                 $code .= '</div></div>';
