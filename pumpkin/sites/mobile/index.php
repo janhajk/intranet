@@ -68,7 +68,7 @@
                         $code .= '</div><div class="row">';
                         $i = 0;
                     }
-                    $code .= '<div class="col-sm-4"><a href="?p='.$p.'"><div class="icon" style="background-image:url(pumpkin/user/images/icons/'.$k.'.png)">'.$k.'</div></a></div>';
+                    $code .= '<div class="col-sm-3"><a href="?p='.$p.'" class="btn btn-default"></div>';
                     $i++;
                 }
                 $code .= '</div></div>';
