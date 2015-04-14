@@ -45,7 +45,7 @@
 		<?php
 		foreach($kurven as $g) {
 		?>
-        <div>
+        <div style="margin-bottom:10px">
             <p><a href="<?=$g['url'];?>"><?=$g['descr'];?></a></p>
             <div id="visualization<?=$g['id'];?>" style="height: 200px;"></div>
         </div>
