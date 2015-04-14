@@ -55,7 +55,7 @@ function pmkCssUpdate($site='mobile') {
 		$content = preg_replace("/:\s/i", ':', $content);
         $sql = "INSERT INTO pmkCSS (content, site) VALUES ('" . $content . "','" . $site . "')";
 		$db->query($sql);
-        $db->db_com_get_last_error();
+        error_log($db->db_com_get_last_error());
 	}
 }
 
