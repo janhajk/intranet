@@ -29,13 +29,16 @@
                         </a><?php
                     }
                 ?>
+                    <a href="?p=arbeit.stunden&l=10" class="list-group-item">
+                        see all
+                    </a>
                 </div>
            </div>
 
             <h3>sonstiges</h3>
 			<ul>
 				<li><a href="?p=arbeit.rechnungen">Rechnungen</a></li>
-				<li><a href="?p=arbeit.stunden&l=10">Stunden&uuml;bersicht</a>&nbsp;&nbsp;&nbsp;<a href="<?=SITE_HTML;?>/actions.php?a=xlsstunden&vertrag=0">xls</a>&nbsp;|&nbsp;<a href="?p=arbeit.timeline&timeline=1">Timeline</a>&nbsp;|&nbsp;<a href="?p=arbeit.graphs">Graphs</a></li>
+				<li>Stunden&uuml;bersicht: <a href="<?=SITE_HTML;?>/actions.php?a=xlsstunden&vertrag=0">xls</a>&nbsp;|&nbsp;<a href="?p=arbeit.timeline&timeline=1">Timeline</a>&nbsp;|&nbsp;<a href="?p=arbeit.graphs">Graphs</a></li>
 				<li><a href="?p=arbeit.total">Total Vertr&auml;ge</a></li>
                 <li><a href="?p=arbeit.admin">admin</a></li>
 			</ul>
