@@ -15,7 +15,7 @@
                 <button type="submit" class="btn btn-default">Submit</button>
             </form>
 
-            <h3>aktuelle Stunden</h3>
+            <h3>latest reports</h3>
             <div>
                 <div class="list-group">
                     <?php
