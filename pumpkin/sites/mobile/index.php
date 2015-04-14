@@ -60,7 +60,7 @@
             * Startseite / Default-Seite
             */
             if(!isset($_GET[$page]) || $_GET[$page]=='') { ?>
-            <div class="container">
+            <div class="container" style="max-width:700px !important;">
                 <div class="list-group">
                 <?php
                 if (canEnterBinary('0.0.0.0.0.0.0.0.1.1')) { ?>
