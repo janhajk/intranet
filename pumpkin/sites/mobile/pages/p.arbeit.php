@@ -17,7 +17,14 @@
 
             <h3>aktuelle Stunden</h3>
             <div>
-                <? stunden_overview(5); ?>
+                <ul class="list-group">
+                    <?php
+                    var $items = stunden_overview();
+                    foreach ($items as $key=>$value) {
+                        ?><li><?=substr($value['date'],5,5); echo substr($value['von'],0,5);echo substr($value['bis'],0,5);?><a href="?p=arbeit.stunden.edit&id=<?=$value['id'];?>"><?=htmlspecialchars(substr($value['comment'],0,23));?></a></li><?php
+                    }
+                ?>
+                </ul>
             </div>
 
             <h3>sonstiges</h3>

@@ -45,9 +45,7 @@ function stunden_overview($limit) {
 	while($r = $db->results()) {
 		$stunden[] = $r;
 	}
-	foreach($stunden as $h) {?>
-	<tr><td><?=substr($h['date'],5,5);?></td><td><?=substr($h['von'],0,5);?></td><td><?=substr($h['bis'],0,5);?></td><td><a href="?p=arbeit.stunden.edit&id=<?=$h['id'];?>"><?=htmlspecialchars(substr($h['comment'],0,23));?></a></td></tr>
-	<? }
+    return $stunden;
 }
 
 function stunden_editform($id) {
