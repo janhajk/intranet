@@ -66,7 +66,7 @@
                 if (canEnterBinary('0.0.0.0.0.0.0.0.1.1')) { ?>
                     <div class="list-group-item">
                         <h4 class="list-group-item-heading">Fonds (Total)</h4>
-                        <p class="list-group-item-text">CHF <?php echo number_format(stocks_totalFonds(),0,'.','\''); ?>.-</p>
+                        <p class="list-group-item-text">CHF <?php echo pmkCurrency(stocks_totalFonds()); ?></p>
                     </div>
                     <div class="list-group-item">&nbsp;</div><?php
                 }
