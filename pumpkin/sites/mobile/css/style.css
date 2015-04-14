@@ -1,5 +1,7 @@
 body{
 	font-size:9pt;
+    width: 100%;
+    max-width: 
 }
 div {
 	padding: 2px;
@@ -17,7 +19,6 @@ table td, tr {
 .box {
 	border:1px solid #000;
 	padding:4px;
-	max-width:600px;
 }
 .title {
 	width:98%;
@@ -62,10 +63,11 @@ table td, tr {
 
 #menu li {
     text-align: right;
-    width: 48%;
+    width: 60px;
     float: left;
     border: 1px solid black;
     margin-bottom: -1px;
+    padding: 3px;
 }
 
 #menu li:nth-child(even) {
