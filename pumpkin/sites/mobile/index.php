@@ -64,7 +64,7 @@
                 $code = '<div class="container">';
                 $i = 0;
                 foreach($pages as $k=>$p) {
-                    $code .= '<div class="col-sm-3"><a href="?p='.$p.'" class="btn btn-default btn-block">'.$k.'</a></div>';
+                    $code .= '<a href="?p='.$p.'" class="btn btn-default btn-block">'.$k.'</a>';
                 }
                 $code .= '</div>';
                 makeElement('Seiten', $code);
