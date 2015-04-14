@@ -21,7 +21,7 @@
                     <?php
                     $items = stunden_overview(5);
                     foreach ($items as $key=>$value) {?>
-                        <li><?php
+                        <li class="list-group-item"><?php
                             echo $value['date'] . ' ';
                             echo substr($value['von'],0,5).'-';
                             echo substr($value['bis'],0,5);?>&#58;
