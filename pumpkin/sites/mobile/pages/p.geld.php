@@ -47,7 +47,7 @@
 		?>
         <div>
             <p><a href="<?=$g['url'];?>"><?=$g['descr'];?></a></p>
-            <div id="visualization<?=$g['id'];?>" style="width: 80%; height: 200px;"></div>
+            <div id="visualization<?=$g['id'];?>" style="height: 200px;"></div>
         </div>
 		<? } ?>
         <a href="index.php" role="button" class="btn btn-default btn-sm btn-block">back</a>
