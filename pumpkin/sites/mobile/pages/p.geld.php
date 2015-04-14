@@ -20,7 +20,7 @@
               $data = diagramFonds($g['id']);
               print $data[0];
             ?>])
-          );   
+          );
           var chart = new google.visualization.AnnotatedTimeLine(document.getElementById('visualization<?=$g['id']; ?>'));
           chart.draw(data, {
             displayAnnotations: true,
@@ -34,11 +34,11 @@
         google.setOnLoadCallback(drawVisualization<?=$g['id']; ?>);
       <? } ?>
     </script>
-    
-    
-    
-    <?=link_back_head('');?>
-    <div class="box" style="width:90%;max-width:90%;">
+
+
+
+    <div class="container">
+        <a href="index.php" role="button" class="btn btn-default btn-sm btn-block">back</a>
         <div class="title">Kurse (<a href="<?=USER_ACT;?>/cronjob.stocks.php" style="color:#FFF;">update</a>); Total Wert: <?=pmkCurrency(stocks_totalFonds()); ?></div>
 		<?php
 		foreach($kurven as $g) {
@@ -48,6 +48,6 @@
             <div id="visualization<?=$g['id'];?>" style="width: 80%; height: 200px;"></div>
         </div>
 		<? } ?>
+        <a href="index.php" role="button" class="btn btn-default btn-sm btn-block">back</a>
     </div>
-    <?=link_back_foot('');?>
 <? } ?>
