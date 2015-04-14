@@ -66,20 +66,23 @@
                 if (canEnterBinary('0.0.0.0.0.0.0.0.1.1')) { ?>
                     <div class="list-group-item">
                         <h4 class="list-group-item-heading">Fonds</h4>
-                        <p class="list-group-item-text"><?php echo stocks_totalFonds();?></p>
-                    </div><?php
+                        <p class="list-group-item-text">CHF<?php echo stocks_totalFonds(); ?>.-</p>
+                    </div>
+                    <div class="list-group-item">&nbsp;</div><?php
                 }
-                $code = '<div class="container">';
-                $i = 0;
-                foreach($pages as $k=>$p) {
-                    $code .= '<a href="?p='.$p.'" class="btn btn-default btn-block">'.$k.'</a>';
-                }
-                $code .= '</div>';
+                foreach($pages as $k=>$p) {?>
+                    <a href="?p=<?php echo $p; ?>" class="list-group-item">
+                        <h4 class="list-group-item-heading"><?php echo $k; ?></h4>
+                        <p class="list-group-item-text"></p>
+                    </a>
+                <?php
+                } ?>
+                </div>
+                <?php
                 makeElement('Seiten', $code);
                 $code = getRandomScripture();
                 echo makeElement('Zuf&auml;llige Schriftstelle', $code);
                 ?>
-                </div>
             </div>
             <?php
             }
