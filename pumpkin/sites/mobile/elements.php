@@ -18,7 +18,7 @@ function makeElement($title, $content) {
 }
 
 $pages = array(
-	'Kurse'		=> array(1, 'Kurse', 'Aktuelle Fondskurse'),
+	'Kurse'		=> array(1, 'Balanced Funds', 'Aktuelle Fondskurse'),
 	'Arbeit'	=> array(2, 'Firma', 'Stundenrapporte, Rechnungen etc.'),
 	'psw'		=> array(3, 'Passwort', 'Passwortkarte'),
   	'diverses'	=> array(4, 'Diverses', 'Buch Mormon'),
