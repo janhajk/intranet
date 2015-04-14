@@ -42,7 +42,7 @@
                 foreach($pages as $k=>$p) {
                     $code .= '<li><a href="?p='.$p.'"><div class="icon" style="background-image:url(pumpkin/user/images/icons/'.$k.'.png)">'.$k.'</div></a></li>';
                 }
-                $code .= '</ul>';
+                $code .= '</ul><div style="clear:both"></div>';
                 makeElement('Seiten', $code);
                 $code = getRandomScripture();
                 echo makeElement('Zuf&auml;llige Schriftstelle', $code);
