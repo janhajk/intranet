@@ -66,7 +66,7 @@
                 if (canEnterBinary('0.0.0.0.0.0.0.0.1.1')) { ?>
                     <div class="list-group-item">
                         <h4 class="list-group-item-heading">Fonds</h4>
-                        <p class="list-group-item-text">CHF<?php echo stocks_totalFonds(); ?>.-</p>
+                        <p class="list-group-item-text">CHF <?php echo stocks_totalFonds(); ?>.-</p>
                     </div>
                     <div class="list-group-item">&nbsp;</div><?php
                 }
@@ -77,12 +77,12 @@
                     </a>
                 <?php
                 } ?>
+                <div class="list-group-item">&nbsp;</div>
+                <div class="list-group-item">
+                    <h4 class="list-group-item-heading">Random Scripture</h4>
+                    <p class="list-group-item-text"><?php //echo getRandomScripture();?></p>
                 </div>
-                <?php
-                makeElement('Seiten', $code);
-                $code = getRandomScripture();
-                echo makeElement('Zuf&auml;llige Schriftstelle', $code);
-                ?>
+                </div>
             </div>
             <?php
             }
