@@ -105,10 +105,6 @@
 					$msg = updateHtpasswd();
 				}
 				break;
-			case 'paper':
-				if(canEnterBinary('1.1.1.1.1.1.1.1.1.1')) {
-					printSheet($_GET['von'], $_GET['bis'], $_GET['fach'], $_GET['spezial']);
-				}
 			case 'EditArbeitStunde':
 				if(canEnterBinary('0.0.0.0.1.0.0.0.0.1')) {
 				}

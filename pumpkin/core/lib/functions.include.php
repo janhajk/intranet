@@ -54,7 +54,7 @@ function pmkCssUpdate($site='mobile') {
 		$content = preg_replace("/\s\}|\}\s/i", '}', $content);
 		$content = preg_replace("/:\s/i", ':', $content);
         $sql = "INSERT INTO pmkCSS (content, site) VALUES ('" . $content . "','" . $site . "')";
-        print($sql);
+        error_log('Update CSS running the following sql strin: '.$sql);
 		$db->query($sql);
 	}
 }
