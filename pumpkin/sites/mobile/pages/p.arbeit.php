@@ -22,7 +22,7 @@
                     $items = stunden_overview(5);
                     foreach ($items as $key=>$value) {?>
                         <a href="?p=arbeit.stunden.edit&id=<?php echo $value['id'];?>" class="list-group-item">
-                            <h4 class="list-group-item-heading"><?php echo $value['date'] . ' '.substr($value['von'],0,5).'-'.substr($value['bis'],0,5);?></h4><?php
+                            <h4 class="list-group-item-heading"><?php echo $value['date'] . ' '.substr($value['von'],0,5).'-'.substr($value['bis'],0,5);?></h4>
                             <p class="list-group-item-text">
                                 <?php echo htmlspecialchars($value['comment']);?>
                             </p>
