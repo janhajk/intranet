@@ -61,17 +61,12 @@
             */
             if(!isset($_GET[$page]) || $_GET[$page]=='') {
                 echo (canEnterBinary('0.0.0.0.0.0.0.0.1.1'))?makeElement('News', '<div>Fondwert:&nbsp;CHF&nbsp;'.stocks_totalFonds().'.-</div>'):'';
-                $code = '<div class="container"><div id="menu" class="row">';
+                $code = '<div class="container">';
                 $i = 0;
                 foreach($pages as $k=>$p) {
-                    if ($i == 3) {
-                        $code .= '</div><div class="row">';
-                        $i = 0;
-                    }
                     $code .= '<div class="col-sm-3"><a href="?p='.$p.'" class="btn btn-default btn-block">'.$k.'</a></div>';
-                    $i++;
                 }
-                $code .= '</div></div>';
+                $code .= '</div>';
                 makeElement('Seiten', $code);
                 $code = getRandomScripture();
                 echo makeElement('Zuf&auml;llige Schriftstelle', $code);
