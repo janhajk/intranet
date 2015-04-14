@@ -66,7 +66,7 @@
                 if (canEnterBinary('0.0.0.0.0.0.0.0.1.1')) { ?>
                     <div class="list-group-item">
                         <h4 class="list-group-item-heading">Fonds</h4>
-                        <p class="list-group-item-text">CHF <?php echo stocks_totalFonds(); ?>.-</p>
+                        <p class="list-group-item-text">CHF <?php echo number_format(stocks_totalFonds(),0,'.','\''); ?>.-</p>
                     </div>
                     <div class="list-group-item">&nbsp;</div><?php
                 }
