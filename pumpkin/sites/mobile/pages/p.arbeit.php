@@ -3,7 +3,6 @@
     <?=link_back_head('');?>
     <div class="container" style="max-width:700px !important;">
         <h2>Arbeit</h2>
-        <div class="container">
             <h3>Stunden erfassen</h3>
             <form role="form" action="<?=SITE_HTML;?>/actions.php" method="post">
                 <select name="vertrag"><option>Vertrag</option><?=getVertrag(); ?></select>
@@ -15,14 +14,12 @@
                 <input type="hidden" name="a" value="writeArbeit" />
                 <button type="submit" class="btn btn-default">Submit</button>
             </form>
-        </div>
-        <div class="container">
+
             <h3>aktuelle Stunden</h3>
-            <div class="container">
+            <div>
                 <? stunden_overview(5); ?>
             </div>
-        </div>
-        <div class="container">
+
             <h3>sonstiges</h3>
 			<ul>
 				<li><a href="?p=arbeit.rechnungen">Rechnungen</a></li>
@@ -30,7 +27,6 @@
 				<li><a href="?p=arbeit.total">Total Vertr&auml;ge</a></li>
                 <li><a href="?p=arbeit.admin">admin</a></li>
 			</ul>
-        </div>
     </div>
     <?=link_back_foot('');?>
 <? } ?>
