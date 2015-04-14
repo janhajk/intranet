@@ -90,9 +90,6 @@
              * Ende Startseite / Default-Seite
              */
         ?>
-        <div class="box" style="text-align:center;font-size:7pt;">
-            Pumpkin-Framework is &copy; 2009 by Jan Sch&auml;r (<a href="mailto:jan.schaer@janschaer.ch">Jan Schär</a>)
-        </div>
     </body>
 </html>
 
