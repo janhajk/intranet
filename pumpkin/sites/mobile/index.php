@@ -59,8 +59,16 @@
            /*
             * Startseite / Default-Seite
             */
-            if(!isset($_GET[$page]) || $_GET[$page]=='') {
-                echo (canEnterBinary('0.0.0.0.0.0.0.0.1.1'))?makeElement('News', '<div>Fondwert:&nbsp;CHF&nbsp;'.stocks_totalFonds().'.-</div>'):'';
+            if(!isset($_GET[$page]) || $_GET[$page]=='') { ?>
+            <div class="container">
+                <div class="list-group">
+                <?php
+                if (canEnterBinary('0.0.0.0.0.0.0.0.1.1')) { ?>
+                    <div class="list-group-item">
+                        <h4 class="list-group-item-heading">Fonds</h4>
+                        <p class="list-group-item-text"><?php echo stocks_totalFonds();?></p>
+                    </div><?php
+                }
                 $code = '<div class="container">';
                 $i = 0;
                 foreach($pages as $k=>$p) {
@@ -70,6 +78,10 @@
                 makeElement('Seiten', $code);
                 $code = getRandomScripture();
                 echo makeElement('Zuf&auml;llige Schriftstelle', $code);
+                ?>
+                </div>
+            </div>
+            <?php
             }
             /*
              * Ende Startseite / Default-Seite
