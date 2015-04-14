@@ -17,21 +17,19 @@
 
             <h3>aktuelle Stunden</h3>
             <div>
-                <ul class="list-group">
+                <div class="list-group">
                     <?php
                     $items = stunden_overview(5);
                     foreach ($items as $key=>$value) {?>
-                        <li class="list-group-item"><?php
-                            echo $value['date'] . ' ';
-                            echo substr($value['von'],0,5).'-';
-                            echo substr($value['bis'],0,5);?>&#58;
-                            <a href="?p=arbeit.stunden.edit&id=<?=$value['id'];?>"><?php
-                                echo htmlspecialchars(substr($value['comment'],0,23));?>
-                            </a>
-                        </li><?php
+                        <a href="?p=arbeit.stunden.edit&id=<?php echo $value['id'];?>" class="list-group-item">
+                            <h4 class="list-group-item-heading"><?php echo $value['date'] . ' '.substr($value['von'],0,5).'-'.substr($value['bis'],0,5);?></h4><?php
+                            <p class="list-group-item-text">
+                                <?php echo htmlspecialchars($value['comment']);?>
+                            </p>
+                        </a><?php
                     }
                 ?>
-                </ul>
+                </div>
            </div>
 
             <h3>sonstiges</h3>
