@@ -42,7 +42,7 @@ function pmkCssUpdate($site='mobile') {
 	$dir = PMKROOT.'/sites/'.$site.'/css';
 	$files = scandir($dir);
 	foreach($files as $i => $value) {
-			if (substr($value, -4) != '.css') {
+			if (substr($value, -4) !== '.css') {
 					unset($files[$i]);
 			}
 	}
@@ -53,7 +53,9 @@ function pmkCssUpdate($site='mobile') {
 		$content = preg_replace("/\s\{|\{\s/i", '{', $content);
 		$content = preg_replace("/\s\}|\}\s/i", '}', $content);
 		$content = preg_replace("/:\s/i", ':', $content);
-		$db->query("INSERT INTO pmkCSS (content, site) VALUES ('".$content."','".$site."');");
+        $sql = "INSERT INTO pmkCSS (content, site) VALUES ('" . $content . "','" . $site . "')";
+        print($sql);
+		$db->query($sql);
 	}
 }
 
