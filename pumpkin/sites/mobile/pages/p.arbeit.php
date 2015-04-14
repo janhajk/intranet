@@ -5,11 +5,11 @@
         <h2>Arbeit</h2>
             <h3>Stunden erfassen</h3>
             <form role="form" action="<?=SITE_HTML;?>/actions.php" method="post">
-                <select name="vertrag"><option>Vertrag</option><?=getVertrag(); ?></select>
-                <select name="datum"><? getRecentDates(70); ?></select>
-                <select name="von"><option>von</option><? getTimelist(6); ?></select>
-                <select name="bis"><option>bis</option><? getTimelist(8); ?></select>
-                <select name="arbeit"><option>Arbeit</option><?=getArbeiten(); ?></select>
+                <select class="form-control" name="vertrag"><option>Vertrag</option><?=getVertrag(); ?></select>
+                <select class="form-control" name="datum"><? getRecentDates(70); ?></select>
+                <select class="form-control" name="von"><option>von</option><? getTimelist(6); ?></select>
+                <select class="form-control" name="bis"><option>bis</option><? getTimelist(8); ?></select>
+                <select class="form-control" name="arbeit"><option>Arbeit</option><?=getArbeiten(); ?></select>
                 <input type="text" class="form-control" id="comment" placeholder="Arbeitsbeschrieb">
                 <input type="hidden" name="a" value="writeArbeit" />
                 <button type="submit" class="btn btn-default">Submit</button>
