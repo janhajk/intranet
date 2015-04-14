@@ -1,6 +1,6 @@
 <? // Arbeit Seite ?>
 <? if(isset($_GET[$page]) && $_GET[$page] == $pages['Arbeit'][0] && canEnterBinary('0.0.0.0.1.0.0.0.0.1')) { ?>
-    <?=link_back_head('');?>
+    <a href="index.php" role="button" class="btn btn-default btn-sm btn-block">back</a>
     <div class="container" style="max-width:700px !important;">
         <h2>Arbeit</h2>
             <h3>Stunden erfassen</h3>
@@ -28,5 +28,5 @@
                 <li><a href="?p=arbeit.admin">admin</a></li>
 			</ul>
     </div>
-    <?=link_back_foot('');?>
+    <a href="index.php" role="button" class="btn btn-default btn-sm btn-block">back</a>
 <? } ?>
