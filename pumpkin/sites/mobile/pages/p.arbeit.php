@@ -2,7 +2,7 @@
 <? if(isset($_GET[$page]) && $_GET[$page] == $pages['Arbeit'][0] && canEnterBinary('0.0.0.0.1.0.0.0.0.1')) { ?>
     <div class="container" style="max-width:700px !important;">
         <a href="index.php" role="button" class="btn btn-default btn-sm btn-block">back</a>
-        <h2>Arbeit</h2>
+        <h2>Firma</h2>
             <h3>Stunden erfassen</h3>
             <form role="form" action="<?=SITE_HTML;?>/actions.php" method="post">
                 <select class="form-control" name="vertrag"><option>Vertrag</option><?=getVertrag(); ?></select>
@@ -16,7 +16,7 @@
             </form>
 
             <h3>aktuelle Stunden</h3>
-            <div>
+            <div class="container">
                 <ul class="list-group">
                     <?php
                     $items = stunden_overview(5);
