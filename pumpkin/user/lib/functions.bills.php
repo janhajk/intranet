@@ -49,12 +49,12 @@ function getVertragsFee($vertrag) {
 
 function getBillById($id) {
     $db = $GLOBALS['db'];
-    $sql = "SELECT * FROM rap_bills WHERE id = $id LIMIT 1";
+    $sql = "SELECT * FROM rap_bills WHERE id = ".((int) $id)." LIMIT 1";
     $db->query($sql);
     while($l = $db->results()){
         $r = $l;
     }
-    return $l;
+    return $r;
 }
 // **************************************************************************************************
 // Vertragstotal seit letzter Rechnung
