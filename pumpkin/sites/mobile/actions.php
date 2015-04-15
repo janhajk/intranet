@@ -81,6 +81,10 @@
 					$msg = 'Include Dateien aktualisiert!';
 				}
 				break;
+            case 'invoiceEdit':
+                if(canEnterBinary('0.0.0.0.0.0.0.0.0.1')) {
+					$msg = 'Invoice got changed!';
+				}
 		}
 	}
 	if(isset($_GET['a'])) {

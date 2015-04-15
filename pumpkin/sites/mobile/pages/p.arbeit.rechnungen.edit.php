@@ -22,7 +22,7 @@
             $vertrag = getContractById($bill['vertrag']);
         ?>
         <p>Invoice for: <?php echo $vertrag['title']; ?></p>
-        <form class="form-horizontal" role="form">
+        <form class="form-horizontal"  action="<?php echo SITE_HTML;?>/actions.php" method="post" role="form">
             <div class="form-group">
                 <label class="control-label col-sm-2" for="bis">Date:</label>
                 <div class="col-sm-10">
@@ -30,6 +30,8 @@
                 </div>
             </div>
             <input type="hidden" name="id" value="<?php echo $bill['id']; ?>" />
+            <input type="hidden" name="a" value="invoiceEdit" />
+
             <div class="form-group">
                 <div class="col-sm-offset-2 col-sm-10">
                     <button type="submit" class="btn btn-default">Submit</button>
