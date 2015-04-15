@@ -23,8 +23,9 @@
                         <th>PDF</th>
                     </tr>
                 </thead><?
-                $statuscolor = array('info','danger','success','success');
+                $statuscolor = array('info','danger','success');
                 $statusIcon = array('print', 'envelope', 'ok');
+                $statusTitle = array('Created', 'Sent to Recipent', 'Paid');
                 $a = getLastBills();
                 foreach($a as $aa) { ?>
                 <tr class="<?php echo $statuscolor[$aa['status']];?>">
@@ -33,7 +34,7 @@
                     <td><?php echo getVertragTitle($aa['vertrag']);?></td>
                     <td align="right"><?=number_format(getRechnungsTotal($aa['id']),2,",","`");?></td>
                     <td>
-                        <a href="<?=SITE_HTML;?>/actions.php?a=changeBillStatus&b=<?=$aa['id'];?>&s=<?=$aa['status'];?>">
+                        <a href="<?=SITE_HTML;?>/actions.php?a=changeBillStatus&b=<?=$aa['id'];?>&s=<?=$aa['status'];?>" title="<?php echo $statusTitle[$aa['status']];?>">
                             <span class="glyphicon glyphicon-<?php echo $statusIcon[$aa['status']];?>"></span>
                         </a>
                     </td>
