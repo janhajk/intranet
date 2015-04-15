@@ -15,7 +15,15 @@
                 </li>
 				<li><a href="?p=arbeit.total">Total Vertr&auml;ge</a></li>
                 <li><a href="?p=arbeit.admin">admin</a></li>
-                        <li class="dropdown">
+			</ul>
+        </div>
+            <div class="container">
+      <h2>Pill with Dropdown Menu</h2>
+      <ul class="nav nav-pills" role="tablist">
+        <li class="active"><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        
+        <li class="dropdown">
           <a class="dropdown-toggle" data-toggle="dropdown" href="#">
           Tutorials <span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
@@ -24,8 +32,8 @@
             <li><a href="#">JavaScript</a></li>                        
           </ul>
         </li>
-			</ul>
-        </div>
+      </ul>
+    </div>
         <h2>Firma</h2>
             <h3>add new report entry</h3>
             <form role="form" action="<?=SITE_HTML;?>/actions.php" method="post">
