@@ -16,16 +16,16 @@
             <li><a href="?p=arbeit.total">Contracts</a></li>
             <li><a href="?p=arbeit.admin"><span class="glyphicon glyphicon-wrench"></span></a></li>
         </ul>
-        <h2>Rechnungen</h2>
+        <h2>Invoices</h2>
         <form class="form-inline" role="form" action="<?=SITE_HTML;?>/actions.php" method="post">
             <div class="form-group">
-                <label for="v">Neue Rechnung f&uuml;r:</label>
-                <select class="form-control" name="v" id="v"><option>Vertrag</option><?=getVertrag(); ?></select>
+                <label for="v">New Invoice for:</label>
+                <select class="form-control" name="v" id="v"><option>select contract...</option><?=getVertrag(); ?></select>
             </div>
             <button type="submit" value="ok" class="btn btn-default">ok</button>
             <input type="hidden" name="a" value="makeBill" />
         </form>
-        <h3>Rechnungen; offen:  CHF&nbsp;<?=number_format(getBillsOpenBetrag(),2,",","`");?></h3>
+        <p>Total unpaid invoices:  CHF&nbsp;<?=number_format(getBillsOpenBetrag(),2,",","`");?></p>
         <table class="table table-hover">
                 <thead>
                     <tr>
