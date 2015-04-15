@@ -1,7 +1,6 @@
 <? // Arbeit Seite ?>
 <? if(isset($_GET[$page]) && $_GET[$page] == $pages['Arbeit'][0] && canEnterBinary('0.0.0.0.1.0.0.0.0.1')) { ?>
     <div class="container" style="max-width:700px !important;">
-        <div class="container">
 			<ul class="nav nav-pills" role="tablist">
 				<li><a href="index.php"><span class="glyphicon glyphicon-home"></span></a></li>
                 <li><a href="?p=arbeit.rechnungen">Rechnungen</a></li>
@@ -16,7 +15,6 @@
 				<li><a href="?p=arbeit.total">Total Vertr&auml;ge</a></li>
                 <li><a href="?p=arbeit.admin">admin</a></li>
 			</ul>
-        </div>
         <h2>Firma</h2>
             <h3>add new report entry</h3>
             <form role="form" action="<?=SITE_HTML;?>/actions.php" method="post">
