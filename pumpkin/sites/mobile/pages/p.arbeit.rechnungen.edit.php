@@ -36,13 +36,5 @@
                 </div>
             </div>
         </form>
-            [id] => 1115
-    [vertrag] => 24
-    [filename] => 
-    [status] => 2
-    [betrag] => 0
-    [von] => 2013-07-07
-    [bis] => 2014-04-10
-        }
     </div>
 <? } ?>

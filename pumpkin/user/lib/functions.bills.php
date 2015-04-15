@@ -59,6 +59,7 @@ function getBillById($id) {
 
 function getContractById($id){
     $db = $GLOBALS['db'];
+    $r = null;
     $sql = "SELECT * FROM rap_vertrag WHERE ID = ".((int) $id)." LIMIT 1";
     $db->query($sql);
     while($l = $db->results()){
