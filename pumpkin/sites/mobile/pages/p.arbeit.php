@@ -15,6 +15,15 @@
                 </li>
 				<li><a href="?p=arbeit.total">Total Vertr&auml;ge</a></li>
                 <li><a href="?p=arbeit.admin">admin</a></li>
+                        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+          Tutorials <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="#">HTML</a></li>
+            <li><a href="#">CSS</a></li>
+            <li><a href="#">JavaScript</a></li>                        
+          </ul>
+        </li>
 			</ul>
         </div>
         <h2>Firma</h2>
