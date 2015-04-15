@@ -3,6 +3,7 @@
     <div class="container" style="max-width:700px !important;">
         <ul class="nav nav-pills" role="tablist">
             <li><a href="index.php"><span class="glyphicon glyphicon-home"></span></a></li>
+            <li><a href="?p=2">Business</a></li>
             <li class="active"><a href="?p=arbeit.rechnungen">Invoices</a></li>
             <li class="dropdown">
                 <a class="dropdown-toggle" data-toggle="dropdown" href="#">Time Reports <span class="caret"></span></a>
