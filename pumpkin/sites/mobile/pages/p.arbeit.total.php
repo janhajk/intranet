@@ -23,7 +23,7 @@
                 <thead>
                     <tr>
                         <th>Contract</th>
-                        <th>total hours</th>
+                        <th>Total Hours</th>
                         <th>CHF/h</th>
                         <th>Sum</th>
                     </tr>

@@ -31,7 +31,7 @@
                     <tr>
                         <th>&#35;</th>
                         <th>Date</th>
-                        <th>contractor</th>
+                        <th>Contractor</th>
                         <th>Total</th>
                         <th>status</th>
                         <th>PDF</th>
