@@ -3,6 +3,17 @@
     <div class="container" style="max-width:700px !important;">
         <a href="index.php" role="button" class="btn btn-default btn-sm btn-block">back</a>
         <h2>Firma</h2>
+			<ul class="nav nav-pills" role="tablist">
+				<li><a href="?p=arbeit.rechnungen">Rechnungen</a></li>
+				<li class="dropdown">
+                    <a href="#">Stunden&uuml;bersicht</a>
+                    <li><a href="<?=SITE_HTML;?>/actions.php?a=xlsstunden&vertrag=0">xls</a></li>
+                    <li><a href="?p=arbeit.timeline&timeline=1">Timeline</a></li>
+                    <li><a href="?p=arbeit.graphs">Graphs</a></li>
+                </li>
+				<li><a href="?p=arbeit.total">Total Vertr&auml;ge</a></li>
+                <li><a href="?p=arbeit.admin">admin</a></li>
+			</ul>
             <h3>add new report entry</h3>
             <form role="form" action="<?=SITE_HTML;?>/actions.php" method="post">
                 <select class="form-control" name="vertrag"><option>Vertrag</option><?=getVertrag(); ?></select>
@@ -34,14 +45,5 @@
                     </a>
                 </div>
            </div>
-
-            <h3>other</h3>
-			<ul>
-				<li><a href="?p=arbeit.rechnungen">Rechnungen</a></li>
-				<li>Stunden&uuml;bersicht: <a href="<?=SITE_HTML;?>/actions.php?a=xlsstunden&vertrag=0">xls</a>&nbsp;|&nbsp;<a href="?p=arbeit.timeline&timeline=1">Timeline</a>&nbsp;|&nbsp;<a href="?p=arbeit.graphs">Graphs</a></li>
-				<li><a href="?p=arbeit.total">Total Vertr&auml;ge</a></li>
-                <li><a href="?p=arbeit.admin">admin</a></li>
-			</ul>
-        <a href="index.php" role="button" class="btn btn-default btn-sm btn-block">back</a>
     </div>
 <? } ?>
