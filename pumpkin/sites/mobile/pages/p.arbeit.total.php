@@ -19,7 +19,7 @@
         <h2>Totals</h2>
         <div>
             <h3>per contract</h3>
-            <table class="table">
+            <table class="table" align="right">
                 <thead>
                     <tr>
                         <th>Contract</th>
