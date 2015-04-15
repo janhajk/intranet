@@ -19,7 +19,17 @@
         <h2>Totals</h2>
         <div>
             <h3>per contract</h3>
-            <table class="table"><? getTotalVertrag(); ?></table>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Contract</th>
+                        <th>total hours</th>
+                        <th>CHF/h</th>
+                        <th>Sum</th>
+                    </tr>
+                </thead>
+                <? getTotalVertrag(); ?>
+            </table>
         </div>
         <div>
             <h3>Annual</h3>
