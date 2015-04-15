@@ -15,7 +15,7 @@
 				<li><a href="?p=arbeit.total">Contracts</a></li>
                 <li><a href="?p=arbeit.admin"><span class="glyphicon glyphicon-wrench"></span></a></li>
 			</ul>
-        <h2>Firma</h2>
+        <h2>Business</h2>
             <h3>add report</h3>
             <form role="form" action="<?=SITE_HTML;?>/actions.php" method="post">
                 <select class="form-control" name="vertrag"><option>Vertrag</option><?=getVertrag(); ?></select>
