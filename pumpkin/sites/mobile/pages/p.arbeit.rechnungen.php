@@ -3,7 +3,6 @@
     <div class="container" style="max-width:700px !important;">
         <a href="index.php?p=<?php echo $pages['Arbeit'][0]; ?>" role="button" class="btn btn-default btn-sm btn-block">back</a>
         <h2>Rechnungen</h2>
-        <h3>erstellen</h3>
         <form class="form-inline" role="form" action="<?=SITE_HTML;?>/actions.php" method="post">
             <div class="form-group">
                 <label for="v">Neue Rechnung f&uuml;r:</label>
