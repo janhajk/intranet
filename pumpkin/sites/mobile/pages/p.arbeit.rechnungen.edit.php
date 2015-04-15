@@ -21,7 +21,7 @@
             $bill = getBillById($_GET['id']);
             $vertrag = getContractById($bill['vertrag']);
         ?>
-        <p><?php echo $vertrag['title']; ?></p>
+        <p>Invoice for: <?php echo $vertrag['title']; ?></p>
         <form class="form-horizontal" role="form">
             <div class="form-group">
                 <label class="control-label col-sm-2" for="bis">Date:</label>
