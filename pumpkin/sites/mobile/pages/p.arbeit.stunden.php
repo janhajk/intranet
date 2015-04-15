@@ -1,15 +1,15 @@
 <? // Arbeit.Stunden Seite ?>
 <? if(isset($_GET[$page]) && $_GET[$page] == 'arbeit.stunden' && canEnterBinary('0.0.0.0.1.0.0.0.0.1')) {
-	if(isset($_GET['l'])) {$limit = $_GET['l'];}
+	if(isset($_GET['l'])) {$limit = (int) $_GET['l'];}
 	?>
-    <?=link_back_head($pages['Arbeit'][0]);?>
-    <div class="box">
-<a href="<?=str_replace("l=10", "l=30", $_SERVER["REQUEST_URI"]);?>">more</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="<?=SITE_HTML;?>/actions.php?a=xlsstunden">download</a>
-        <div class="title">Stunden</div>
+    <div class="container" style="max-width:700px !important;">
+        <a href="index.php?p="<?php echo $pages['Arbeit'][0]; ?> role="button" class="btn btn-default btn-sm btn-block">back</a>
+        <h2>Time Sheet</h2>
+        <a href="<?=SITE_HTML;?>/actions.php?a=xlsstunden">download</a>
         <div>
-            <div class="header2">Letzte 10</div>
+            <h3>Last <?php echo $limit; ?></h3>
             <table><? stunden_overview($limit); ?></table>
         </div>
+        <a href="<?=str_replace("l=10", "l=30", $_SERVER["REQUEST_URI"]);?>">more</a>
     </div>
-    <?=link_back_foot($pages['Arbeit'][0]);?>
 <? } ?>
