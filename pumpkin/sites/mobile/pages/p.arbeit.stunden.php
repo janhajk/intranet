@@ -20,7 +20,7 @@
             </a><?php
                                      }
             ?>
-            <a href="?p=arbeit.stunden&l=<?php $limit+20; ?>" class="list-group-item">
+            <a href="?p=arbeit.stunden&l=<?php echo ($limit+20); ?>" class="list-group-item">
                 more
             </a>
         </div>
