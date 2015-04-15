@@ -18,7 +18,7 @@
         </ul>
         <h2>Invoice # <?php echo $_GET['id']; ?></h2>
         <?php
-            $bill = getBillById($_GET['id']));
+            $bill = getBillById($_GET['id']);
             $vertrag = getContractById($bill['id']);
         ?>
         <p><?php echo $vertrag['title']; ?></p>
@@ -27,6 +27,12 @@
                 <label class="control-label col-sm-2" for="bis">Date:</label>
                 <div class="col-sm-10">
                     <input type="text" class="form-control" id="bis" name="bis" value="<?php echo $bill['bis']; ?>">
+                </div>
+            </div>
+            <input type="hidden" name="id" value="<?php echo $bill['id']; ?>" />
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <button type="submit" class="btn btn-default">Submit</button>
                 </div>
             </div>
         </form>
