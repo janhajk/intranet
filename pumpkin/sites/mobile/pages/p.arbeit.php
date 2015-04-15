@@ -3,20 +3,20 @@
     <div class="container" style="max-width:700px !important;">
 			<ul class="nav nav-pills" role="tablist">
 				<li><a href="index.php"><span class="glyphicon glyphicon-home"></span></a></li>
-                <li><a href="?p=arbeit.rechnungen">Rechnungen</a></li>
+                <li><a href="?p=arbeit.rechnungen">Invoices</a></li>
 				<li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Stunden&uuml;bersicht <span class="caret"></span></a>
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Time Reports <span class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu">
                         <li><a href="<?=SITE_HTML;?>/actions.php?a=xlsstunden&vertrag=0">xls</a></li>
                         <li><a href="?p=arbeit.timeline&timeline=1">Timeline</a></li>
                         <li><a href="?p=arbeit.graphs">Graphs</a></li>
                     </ul>
                 </li>
-				<li><a href="?p=arbeit.total">Total Vertr&auml;ge</a></li>
-                <li><a href="?p=arbeit.admin">admin</a></li>
+				<li><a href="?p=arbeit.total">Contracts</a></li>
+                <li><a href="?p=arbeit.admin"><span class="glyphicon glyphicon-wrench"></span></a></li>
 			</ul>
         <h2>Firma</h2>
-            <h3>add new report entry</h3>
+            <h3>add report</h3>
             <form role="form" action="<?=SITE_HTML;?>/actions.php" method="post">
                 <select class="form-control" name="vertrag"><option>Vertrag</option><?=getVertrag(); ?></select>
                 <select class="form-control" name="datum"><? getRecentDates(70); ?></select>
