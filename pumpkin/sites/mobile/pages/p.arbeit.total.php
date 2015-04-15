@@ -24,7 +24,7 @@
         <div>
             <h3>Annual</h3>
             <table>
-                <? for ($i=2015;i>2007;i--){getTotalJahr(2007);} ?>
+                <? for ($i=2015;$i>2007;$i--){getTotalJahr(2007);} ?>
 
             </table>
         </div>
