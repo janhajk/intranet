@@ -34,7 +34,7 @@
                     <td align="right"><?=number_format(getRechnungsTotal($aa['id']),2,",","`");?></td>
                     <td>
                         <a href="<?=SITE_HTML;?>/actions.php?a=changeBillStatus&b=<?=$aa['id'];?>&s=<?=$aa['status'];?>">
-                            <span class="glyphicon glyphicon-<?php echo getStatus($aa['status']);?>"></span>
+                            <span class="glyphicon glyphicon-<?php echo $statusIcon[$aa['status']];?>"></span>
                         </a>
                     </td>
                     <td><a href="<?=USER_ACT;?>/print.bill.php?nr=<?=$aa['id'];?>&a=BillPDF">PDF</a></td>
@@ -43,13 +43,3 @@
         </table>
     </div>
 <? } ?>
-<?
-function getStatus($s) {
-	switch($s) {
-		case 0:return 'print_icon.png';
-		case 1:return 'sende_icon.png';
-		case 2:return 'tick_icon.png';
-		case 3:return 'tick_icon.png';
-	}
-}
-?>
