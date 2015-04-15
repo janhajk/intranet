@@ -19,7 +19,7 @@
         <h2>Invoice # <?php echo $_GET['id']; ?></h2>
         <?php
             $bill = getBillById($_GET['id']);
-            $vertrag = getContractById($bill['id']);
+            $vertrag = getContractById($bill['vertrag']);
         ?>
         <p><?php echo $vertrag['title']; ?></p>
         <form class="form-horizontal" role="form">
