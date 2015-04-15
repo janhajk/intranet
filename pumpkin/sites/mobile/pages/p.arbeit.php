@@ -6,10 +6,12 @@
 			<ul class="nav nav-pills" role="tablist">
 				<li><a href="?p=arbeit.rechnungen">Rechnungen</a></li>
 				<li class="dropdown">
-                    <a href="#">Stunden&uuml;bersicht</a>
-                    <li><a href="<?=SITE_HTML;?>/actions.php?a=xlsstunden&vertrag=0">xls</a></li>
-                    <li><a href="?p=arbeit.timeline&timeline=1">Timeline</a></li>
-                    <li><a href="?p=arbeit.graphs">Graphs</a></li>
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Stunden&uuml;bersicht <span class="caret"></span></a>
+                    <ul>
+                        <li><a href="<?=SITE_HTML;?>/actions.php?a=xlsstunden&vertrag=0">xls</a></li>
+                        <li><a href="?p=arbeit.timeline&timeline=1">Timeline</a></li>
+                        <li><a href="?p=arbeit.graphs">Graphs</a></li>
+                    </ul>
                 </li>
 				<li><a href="?p=arbeit.total">Total Vertr&auml;ge</a></li>
                 <li><a href="?p=arbeit.admin">admin</a></li>
