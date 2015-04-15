@@ -18,7 +18,7 @@
         <h2>Business</h2>
             <h3>add report</h3>
             <form role="form" action="<?=SITE_HTML;?>/actions.php" method="post">
-                <select class="form-control" name="vertrag"><option>Vertrag</option><?=getVertrag(); ?></select>
+                <select class="form-control" name="vertrag" placeholder="Select Contrat"><?=getVertrag(); ?></select>
                 <select class="form-control" name="datum"><? getRecentDates(70); ?></select>
                 <select class="form-control" name="von"><option>von</option><? getTimelist(6); ?></select>
                 <select class="form-control" name="bis"><option>bis</option><? getTimelist(8); ?></select>
