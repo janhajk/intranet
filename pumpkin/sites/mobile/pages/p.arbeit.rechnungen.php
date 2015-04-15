@@ -24,6 +24,7 @@
                     </tr>
                 </thead><?
                 $statuscolor = array('info','danger','success','success');
+                $statusIcon = array('print', 'envelope', 'ok');
                 $a = getLastBills();
                 foreach($a as $aa) { ?>
                 <tr class="<?php echo $statuscolor[$aa['status']];?>">
@@ -31,7 +32,11 @@
                     <td><?=$aa['bis'];?></td>
                     <td><?php echo getVertragTitle($aa['vertrag']);?></td>
                     <td align="right"><?=number_format(getRechnungsTotal($aa['id']),2,",","`");?></td>
-                    <td><a href="<?=SITE_HTML;?>/actions.php?a=changeBillStatus&b=<?=$aa['id'];?>&s=<?=$aa['status'];?>"><img src="pumpkin/user/images/<?=getStatus($aa['status']);?>" border="0" title="" /></a></td>
+                    <td>
+                        <a href="<?=SITE_HTML;?>/actions.php?a=changeBillStatus&b=<?=$aa['id'];?>&s=<?=$aa['status'];?>">
+                            <span class="glyphicon glyphicon-<?php echo getStatus($aa['status']);?>"></span>
+                        </a>
+                    </td>
                     <td><a href="<?=USER_ACT;?>/print.bill.php?nr=<?=$aa['id'];?>&a=BillPDF">PDF</a></td>
                 </tr>
             <? } ?>
