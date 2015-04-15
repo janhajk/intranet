@@ -20,10 +20,9 @@
             </a><?php
                                      }
             ?>
-            <a href="?p=arbeit.stunden&l=10" class="list-group-item">
-                see all
+            <a href="?p=arbeit.stunden&l=<?php $limit+20; ?>" class="list-group-item">
+                more
             </a>
         </div>
-        <a href="<?=str_replace("l=10", "l=30", $_SERVER["REQUEST_URI"]);?>">more</a>
     </div>
 <? } ?>
