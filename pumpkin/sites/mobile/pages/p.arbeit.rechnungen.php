@@ -12,7 +12,7 @@
             <input type="hidden" name="a" value="makeBill" />
         </form>
         <h3>Rechnungen; offen:  CHF&nbsp;<?=number_format(getBillsOpenBetrag(),2,",","`");?></h3>
-        <table class="table">
+        <table class="table table-hover">
                 <thead>
                     <tr>
                         <th>&#35;</th>
