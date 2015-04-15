@@ -25,7 +25,7 @@
             <button type="submit" value="ok" class="btn btn-default">ok</button>
             <input type="hidden" name="a" value="makeBill" />
         </form>
-        <p>Total unpaid invoices:  CHF&nbsp;<?=number_format(getBillsOpenBetrag(),2,",","`");?></p>
+        <p></p><p>Total unpaid invoices:  CHF&nbsp;<?=number_format(getBillsOpenBetrag(),2,",","`");?></p>
         <table class="table table-hover">
                 <thead>
                     <tr>
