@@ -4,9 +4,12 @@
         <a href="index.php?p=<?php echo $pages['Arbeit'][0]; ?>" role="button" class="btn btn-default btn-sm btn-block">back</a>
         <h2>Rechnungen</h2>
         <h3>erstellen</h3>
-        <form action="<?=SITE_HTML;?>/actions.php" method="post">
-            <select name="v"><option>Vertrag</option><?=getVertrag(); ?></select><br>
-            <input type="submit" value="ok" />
+        <form class="form-inline" role="form" action="<?=SITE_HTML;?>/actions.php" method="post">
+            <div class="form-group">
+                <label for="v">Neue Rechnung f&uuml;r:</label>
+                <select class="form-control" name="v" id="v"><option>Vertrag</option><?=getVertrag(); ?></select>
+            </div>
+            <button type="submit" value="ok" class="btn btn-default">ok</button>
             <input type="hidden" name="a" value="makeBill" />
         </form>
         <h3>Rechnungen; offen:  CHF&nbsp;<?=number_format(getBillsOpenBetrag(),2,",","`");?></h3>
