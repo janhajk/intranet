@@ -27,7 +27,7 @@ function getRechnungsTotal($RechnNr) {
 		$vertrag = $l['vertrag'];
 	}
 	$sql = 'SELECT SUM(stunden) AS total FROM rap_stunden 
-	WHERE  
+	WHERE
 	vertrag = '.$vertrag.' AND 
 	date >= \''.$von.'\' AND 
 	date <= \''.$bis.'\'';
@@ -44,7 +44,17 @@ function getVertragsFee($vertrag) {
 	$db->query($sql);
 	while($l = $db->results()) {
 		return $l['nettoansatz'];
-	}	
+	}
+}
+
+function getBillById($id) {
+    $db = $GLOBALS['db'];
+    $sql = "SELECT * FROM rap_bills WHERE id = $id LIMIT 1";
+    $db->query($sql);
+    while($l = $db->results()){
+        $r = $l;
+    }
+    return $l;
 }
 // **************************************************************************************************
 // Vertragstotal seit letzter Rechnung
@@ -399,7 +409,7 @@ function stundenrapport($pdf) {
 		// Ende: Header
 		//neue Zeile
 		$pdf->Ln();
-	// Liste der Stunden	
+	// Liste der Stunden
 	foreach($stunden as $entry) {
 		// Begin: Auflistung
 		$pdf->Cell(18,6, date_mysql2german($entry['date']),1);
@@ -410,7 +420,7 @@ function stundenrapport($pdf) {
 		$pdf->Cell(86,6,substr(utf8_decode($entry['comment']),0,90),1);
 		// Ende: Auflistung
 		$pdf->Ln();
-	}	
+	}
 	$sql  = 'SELECT SUM(`rap_stunden`.`stunden`) AS `total` 
 	FROM rap_stunden 
 	LEFT JOIN rap_vertrag ON (`rap_stunden`.`vertrag`    = `rap_vertrag`.`ID`) 

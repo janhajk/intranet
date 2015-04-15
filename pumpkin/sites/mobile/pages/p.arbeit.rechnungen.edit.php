@@ -17,5 +17,6 @@
             <li><a href="?p=arbeit.admin"><span class="glyphicon glyphicon-wrench"></span></a></li>
         </ul>
         <h2>Invoice # <?php echo $_GET['id']; ?></h2>
+        <p><?php print_r(getBillById($_GET['id'],1)); ?></p>
     </div>
 <? } ?>

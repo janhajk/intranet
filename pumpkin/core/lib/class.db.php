@@ -76,7 +76,7 @@ class clsdb {
                                 return 0;
                         }
                         else {
-                                return 1;								
+                                return 1;
                         }
                 }
                 else {
@@ -160,7 +160,7 @@ class clsdb {
 		
 		// Mit dieser Funktion kann man alle Spaltentitel in einem Array ausgeben lassen.
 		// begonnen wird dabei per default bei 0, also mit der `id`-Spalte
-		// möchte man die `id`-Spalte weglassen, dann kann man $start = 1 setzten
+		// mï¿½chte man die `id`-Spalte weglassen, dann kann man $start = 1 setzten
 		function colTitles($start = 0) {
                 if(!$this->result) {
                         $this->errormessage = "Result is empty.";
