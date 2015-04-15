@@ -3,8 +3,10 @@
     <div class="container" style="max-width:700px !important;">
         <a href="index.php" role="button" class="btn btn-default btn-sm btn-block">back</a>
         <h2>Firma</h2>
+        <div class="container">
 			<ul class="nav nav-pills" role="tablist">
-				<li><a href="?p=arbeit.rechnungen">Rechnungen</a></li>
+				<li><a href="index.php"><span class="glyphicon glyphicon-home"></span></a></li>
+                <li><a href="?p=arbeit.rechnungen">Rechnungen</a></li>
 				<li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">Stunden&uuml;bersicht <span class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu">
@@ -16,6 +18,7 @@
 				<li><a href="?p=arbeit.total">Total Vertr&auml;ge</a></li>
                 <li><a href="?p=arbeit.admin">admin</a></li>
 			</ul>
+        </div>
             <h3>add new report entry</h3>
             <form role="form" action="<?=SITE_HTML;?>/actions.php" method="post">
                 <select class="form-control" name="vertrag"><option>Vertrag</option><?=getVertrag(); ?></select>
