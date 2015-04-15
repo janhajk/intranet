@@ -1,22 +1,34 @@
 <? // Arbeit.Stunden Seite ?>
 <? if(isset($_GET[$page]) && $_GET[$page] == 'arbeit.total' && canEnterBinary('0.0.0.0.0.0.0.0.0.1')) {	?>
-    <?=link_back_head($pages['Arbeit'][0]);?>
-    <div class="box">
-        <div class="title">Total Verträge</div>
+    <div class="container" style="max-width:700px !important;">
+        <ul class="nav nav-pills" role="tablist">
+            <li><a href="index.php"><span class="glyphicon glyphicon-home"></span></a></li>
+            <li><a href="?p=2">Business</a></li>
+            <li><a href="?p=arbeit.rechnungen">Invoices</a></li>
+            <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#">Time Reports <span class="caret"></span></a>
+                <ul class="dropdown-menu" role="menu">
+                    <li><a href="<?=SITE_HTML;?>/actions.php?a=xlsstunden&vertrag=0">xls</a></li>
+                    <li><a href="?p=arbeit.timeline&timeline=1">Timeline</a></li>
+                    <li><a href="?p=arbeit.graphs">Graphs</a></li>
+                </ul>
+            </li>
+            <li class="active"><a href="?p=arbeit.total">Contracts</a></li>
+            <li><a href="?p=arbeit.admin"><span class="glyphicon glyphicon-wrench"></span></a></li>
+        </ul>
+        <h2>Totals</h2>
         <div>
-            <div class="header2">nach Vertrag</div>
-            <table><? getTotalVertrag(); ?></table>
+            <h3>per contract</h3>
+            <table class="table"><? getTotalVertrag(); ?></table>
         </div>
         <div>
-            <div class="header2">Total Jahr</div>
+            <h3>Annual</h3>
             <table>
-				<? getTotalJahr(2007); ?>
-            	<? getTotalJahr(2008); ?>
-				<? getTotalJahr(2009); ?>
+                <? for ($i=2015;i>2007;i--){getTotalJahr(2007);} ?>
+
             </table>
         </div>
     </div>
-    <?=link_back_foot($pages['Arbeit'][0]);?>
 <? } ?>
 <?
 function getTotalVertrag() {
