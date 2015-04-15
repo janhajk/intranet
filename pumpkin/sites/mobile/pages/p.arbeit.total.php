@@ -47,7 +47,7 @@ function getTotalVertrag() {
 	$db->query($sql);
 	while($i = $db->results()) { if($i['title']!='')$totals[] = $i; }
 	foreach($totals as $t) {
-		echo "<tr><td><a href=\"".SITE_HTML."/actions.php?a=xlsstunden&vertrag=".$t['ID']."\">".$t['title']."</a></td><td>".round($t['t'])."h</td><td>".round($t['nettoansatz']).".-</td><td align="right">".number_format(round($t['c']),0,'.','`').".-</td></tr>";
+		echo "<tr><td><a href=\"".SITE_HTML."/actions.php?a=xlsstunden&vertrag=".$t['ID']."\">".$t['title']."</a></td><td>".round($t['t'])."h</td><td>".round($t['nettoansatz']).".-</td><td align=\"right\">".number_format(round($t['c']),0,'.','`').".-</td></tr>";
 	}
 }
 
