@@ -17,6 +17,26 @@
             <li><a href="?p=arbeit.admin"><span class="glyphicon glyphicon-wrench"></span></a></li>
         </ul>
         <h2>Invoice # <?php echo $_GET['id']; ?></h2>
-        <p><pre><?php print_r(getBillById($_GET['id'])); ?></pre></p>
+        <?php
+            $bill = getBillById($_GET['id']));
+            $vertrag = getContractById($bill['id']);
+        ?>
+        <p><?php echo $vertrag['title']; ?></p>
+        <form class="form-horizontal" role="form">
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="bis">Date:</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="bis" name="bis" value="<?php echo $bill['bis']; ?>">
+                </div>
+            </div>
+        </form>
+            [id] => 1115
+    [vertrag] => 24
+    [filename] => 
+    [status] => 2
+    [betrag] => 0
+    [von] => 2013-07-07
+    [bis] => 2014-04-10
+        }
     </div>
 <? } ?>
