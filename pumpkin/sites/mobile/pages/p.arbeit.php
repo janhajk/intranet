@@ -1,6 +1,5 @@
-<? // Arbeit Seite ?>
-<? if(isset($_GET[$page]) && $_GET[$page] == $pages['Arbeit'][0] && canEnterBinary('0.0.0.0.1.0.0.0.0.1')) { ?>
-    <div class="container" style="max-width:700px !important;">
+<?php
+$nav_arbeit = <<<EOL
         <nav role="navigation" class="navbar navbar-default navbar-fixed-top">
             <div class="navbar-header">
                 <button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle">
@@ -27,6 +26,12 @@
                 </ul>
             </div>
         </nav>
+EOL;
+
+<? // Arbeit Seite ?>
+<? if(isset($_GET[$page]) && $_GET[$page] == $pages['Arbeit'][0] && canEnterBinary('0.0.0.0.1.0.0.0.0.1')) { ?>
+    <div class="container" style="max-width:700px !important;">
+        <?php echo $nav_arbeit; ?>
         <h2>Business</h2>
             <h3>add report</h3>
             <form role="form" action="<?=SITE_HTML;?>/actions.php" method="post">

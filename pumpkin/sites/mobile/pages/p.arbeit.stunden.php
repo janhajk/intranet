@@ -3,7 +3,7 @@
 	if(isset($_GET['l'])) {$limit = (int) $_GET['l'];}
 	?>
     <div class="container" style="max-width:700px !important;">
-        <a href="index.php?p=<?php echo $pages['Arbeit'][0]; ?>" role="button" class="btn btn-default btn-sm btn-block">back</a>
+         <?php echo $nav_arbeit; ?>
         <h2>Time Sheet</h2>
         <a href="<?=SITE_HTML;?>/actions.php?a=xlsstunden">csv download all</a>
 
