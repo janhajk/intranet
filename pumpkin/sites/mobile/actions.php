@@ -111,6 +111,7 @@
 			case 'xlsstunden':
 				if(canEnterBinary('0.0.0.0.1.0.0.0.0.1')) {
 					$msg = xlsExportStunden($_GET['vertrag']);
+                    $redirect_page = false;
 				}
 				break;
 			case 'UpdateHt':
@@ -129,7 +130,7 @@
 		}
 	}
 	$_SESSION['msg'] = $msg;
-	header("Location: ".$redirect_page);
+    if ($redirect_page) header("Location: ".$redirect_page);
 // **************************************************************************************************
 	//Lib schliessen
 	endlib();			// from lib/lib.php
