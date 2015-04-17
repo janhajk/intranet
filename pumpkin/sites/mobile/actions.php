@@ -83,8 +83,14 @@
 				break;
             case 'invoiceEdit':
                 if(canEnterBinary('0.0.0.0.0.0.0.0.0.1')) {
-					
-                    $msg = 'Invoice '.$_POST['id'].' got changed!';
+                    if (preg_match('/\d\d\d\d\-\d\d\-\d\d/', $_POST['bis'])) {
+					    $sql = "UPDATE rap_bills SET bis = '".$_POST['bis']."' WHERE id = ".((int) $_POST['id']);
+                        $db->query($sql);
+                        $msg = 'Invoice '.$_POST['id'].' date got changed!';
+                    }
+                    else {
+                        $msg = 'Error when trying to update invoice';
+                    }
 				}
 		}
 	}
