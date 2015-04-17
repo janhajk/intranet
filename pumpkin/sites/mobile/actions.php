@@ -5,6 +5,7 @@
 	include($_SERVER['DOCUMENT_ROOT'].'/config.php');
 // **************************************************************************************************
 	$msg = '';
+    $redirect_page = $_SERVER['HTTP_REFERER'];
 	if (isset($_POST['a'])) {
 		switch($_POST['a']) {
 			case 'writeArbeit':
@@ -87,6 +88,7 @@
 					    $sql = "UPDATE rap_bills SET bis = '".$_POST['bis']."' WHERE id = ".((int) $_POST['id']);
                         $db->query($sql);
                         $msg = 'Invoice '.$_POST['id'].' date got changed!';
+                        $redirect_page = '?p=arbeit.rechnungen';
                     }
                     else {
                         $msg = 'Error when trying to update invoice';
@@ -127,7 +129,7 @@
 		}
 	}
 	$_SESSION['msg'] = $msg;
-	header("Location: ".$_SERVER['HTTP_REFERER']);
+	header("Location: ".$redirect_page);
 // **************************************************************************************************
 	//Lib schliessen
 	endlib();			// from lib/lib.php
