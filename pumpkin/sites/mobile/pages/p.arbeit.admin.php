@@ -2,9 +2,9 @@
 <? if(isset($_GET[$page]) && $_GET[$page] == 'arbeit.admin' && canEnterBinary('0.0.0.0.0.0.0.0.0.1')) {	?>
     <div class="container" style="max-width:700px !important;">
         <?php echo $nav_arbeit; ?>
-        <div class="title">edit</div>
+        <h3>edit</h3>
         <div>
-            <div class="header2">neuer Vertrag</div>
+            <h3>neuer Vertrag</h3>
             	<form action="<?=SITE_HTML;?>/actions.php" method="post">
                     <input type="text" name="arbeitstitel" value="Arbeitstitel" /><br />
                     <input type="text" name="nettoansatz" value="Ansatz" /><br />
@@ -35,5 +35,4 @@
                 <input type="hidden" name="a" value="updateConfig" /><input type="submit" value="ok" /></form>
         </div>
     </div>
-    <?=link_back_foot($pages['Arbeit']);?>
 <? } ?>
