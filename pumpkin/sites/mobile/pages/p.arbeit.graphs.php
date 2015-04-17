@@ -1,7 +1,7 @@
 <? // Arbeit.Graphs Seite ?>
 <? if(isset($_GET[$page]) && $_GET[$page] == 'arbeit.graphs' && canEnterBinary('0.0.0.0.0.0.0.0.0.1')) {	?>
-    <?=link_back_head($pages['Arbeit']);?>
-    <div class="box">
+    <div class="container" style="max-width:700px !important;">
+        <?php echo $nav_arbeit; ?>
         <div class="title">Einnahmen</div>
         <div>
             <div class="header2">Jan</div>

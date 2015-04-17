@@ -21,12 +21,11 @@
 	   tl.loadJSON("<?=USER_ACT;?>/json.arbeit.php?"+ (new Date().getTime()), function(json, url) { eventSource.loadJSON(json, url); });
 	 }
 </script>
-	<?=link_back_head($pages['Arbeit'][0]);?>
-	<div class="box" style="max-width:100%;">
+	<div class="container" style="max-width:100%;">
+        <?php echo $nav_arbeit; ?>
 		<div id="my-timeline" style="height: 200px; border: 1px solid #aaa;width:100%"></div>
 		<noscript>
 		This page uses Javascript to show you a Timeline. Please enable Javascript in your browser to see the full page. Thank you.
 		</noscript>
 	</div>
-	<?=link_back_foot($pages['Arbeit'][0]);?>
 <? } ?>
