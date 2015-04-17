@@ -7,12 +7,12 @@
             <h3>New Contract</h3>
             	<form role="form" action="<?=SITE_HTML;?>/actions.php" method="post">
                     <input class="form-control" type="text" name="arbeitstitel" placeholder="Arbeitstitel" />
-                    <input class="form-control" type="text" name="nettoansatz" placeholder="" />
-                    <input class="form-control" type="text" name="title" placeholder="" />
-                    <input class="form-control" type="text" name="name" value="Bezugsperson" />
-                    <input class="form-control" type="text" name="firma" value="Firma" />
-                    <input class="form-control" type="text" name="strasse" value="Strasse" />
-                    <input class="form-control" type="text" name="ort" value="Ort" />
+                    <input class="form-control" type="text" name="nettoansatz" placeholder="Wage per Hour" />
+                    <input class="form-control" type="text" name="title" placeholder="Selection Titel" />
+                    <input class="form-control" type="text" name="name" placeholder="Contractor Reference Person" />
+                    <input class="form-control" type="text" name="firma" placeholder="Company Name" />
+                    <input class="form-control" type="text" name="strasse" placeholder="Street Adress" />
+                    <input class="form-control" type="text" name="ort" placeholder="ZIP Code, City" />
                     <input class="form-control" type="hidden" name="a" value="addVertrag" />
                     <input class="btn btn-default" type="submit" value="ok" />
                 </form>
