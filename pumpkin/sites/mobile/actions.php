@@ -83,7 +83,8 @@
 				break;
             case 'invoiceEdit':
                 if(canEnterBinary('0.0.0.0.0.0.0.0.0.1')) {
-					$msg = 'Invoice got changed!';
+					
+                    $msg = 'Invoice '.$_POST['id'].' got changed!'.;
 				}
 		}
 	}
