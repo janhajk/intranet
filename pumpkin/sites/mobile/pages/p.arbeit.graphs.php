@@ -10,5 +10,4 @@
 			<?=getMonthlyOverviewChart(date("Y"),2);?>
         </div>
     </div>
-    <?=link_back_foot($pages['Arbeit']);?>
 <? } ?>
