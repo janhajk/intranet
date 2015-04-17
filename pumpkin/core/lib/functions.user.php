@@ -56,38 +56,6 @@ function user_timestamp() {
 }
 
 
-// erstellt ein div, welches anzeigt, wer gerade Online ist
-function show_whos_online_div() {
-	// Minuten, nach welchen ein Benutzer als Offline gilt
-	$i = 5;
-	// Eintritt nur mit Autorenrechte
-	if ($_SESSION['rights'] < 10) {return;}
-	echo "<div style=\"position:absolute;top:20px;left:15px;background:#C66;color:#000;font-size:8pt;font-family:'verdana';font-weight:lighter;\">";
-	echo "<div style=\"background:#930;color:#FFF;margin:4px;padding:2px;\">Angemeldete Benutzer</div>";
-	echo "<div id=\"whoisonline\" style=\"padding:5px;text-align:left;\"></div>";
-	echo "</div>";
-	// Ajax objekt erzeugen + Abfrage im Interval
-	echo"<script language=\"javascript\">
-		<!--
-		function whoisonline() {
-			if(!performing_ajax) {
-				performing_ajax = true;
-				 if (xmlHttp) {
-					 xmlHttp.open('GET', 'act/list.whoisonline.php?spez=log', true);
-					 xmlHttp.onreadystatechange = function () {
-						 if (xmlHttp.readyState == 4) {
-						 document.getElementById('whoisonline').innerHTML = xmlHttp.responseText;
-						 performing_ajax = false;
-						 }
-					 };
-					 xmlHttp.send(null);
-				 }
-			}
-		}
-		setInterval('whoisonline()', 2500);
-		-->
-		</script>";
-}
 
 
 function IsEMail($e) {
