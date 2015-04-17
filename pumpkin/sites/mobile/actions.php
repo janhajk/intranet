@@ -88,7 +88,7 @@
 					    $sql = "UPDATE rap_bills SET bis = '".$_POST['bis']."' WHERE id = ".((int) $_POST['id']);
                         $db->query($sql);
                         $msg = 'Invoice '.$_POST['id'].' date got changed!';
-                        $redirect_page = '?p=arbeit.rechnungen';
+                        $redirect_page = 'index.php?p=arbeit.rechnungen';
                     }
                     else {
                         $msg = 'Error when trying to update invoice';
