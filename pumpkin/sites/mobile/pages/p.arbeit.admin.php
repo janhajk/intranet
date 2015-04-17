@@ -2,19 +2,19 @@
 <? if(isset($_GET[$page]) && $_GET[$page] == 'arbeit.admin' && canEnterBinary('0.0.0.0.0.0.0.0.0.1')) {	?>
     <div class="container" style="max-width:700px !important;">
         <?php echo $nav_arbeit; ?>
-        <h3>edit</h3>
+        <h3>Admin</h3>
         <div>
-            <h3>neuer Vertrag</h3>
-            	<form action="<?=SITE_HTML;?>/actions.php" method="post">
-                    <input type="text" name="arbeitstitel" value="Arbeitstitel" /><br />
-                    <input type="text" name="nettoansatz" value="Ansatz" /><br />
-                    <input type="text" name="title" value="Titel Auswahl" /><br />
-                    <input type="text" name="name" value="Bezugsperson" /><br />
-                    <input type="text" name="firma" value="Firma" /><br />
-                    <input type="text" name="strasse" value="Strasse" /><br />
-                    <input type="text" name="ort" value="Ort" /><br />
-                    <input type="hidden" name="a" value="addVertrag" />
-                    <input type="submit" value="ok" />
+            <h3>New Contract</h3>
+            	<form role="form" action="<?=SITE_HTML;?>/actions.php" method="post">
+                    <input class="form-control" type="text" name="arbeitstitel" value="Arbeitstitel" /><br />
+                    <input class="form-control" type="text" name="nettoansatz" value="Ansatz" /><br />
+                    <input class="form-control" type="text" name="title" value="Titel Auswahl" /><br />
+                    <input class="form-control" type="text" name="name" value="Bezugsperson" /><br />
+                    <input class="form-control" type="text" name="firma" value="Firma" /><br />
+                    <input class="form-control" type="text" name="strasse" value="Strasse" /><br />
+                    <input class="form-control" type="text" name="ort" value="Ort" /><br />
+                    <input class="form-control" type="hidden" name="a" value="addVertrag" />
+                    <input class="btn btn-default" type="submit" value="ok" />
                 </form>
         </div>
 		<div>
