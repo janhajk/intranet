@@ -38,7 +38,7 @@ EOL;
             <h3>add report</h3>
             <form role="form" action="<?=SITE_HTML;?>/actions.php" method="post">
                 <select class="form-control" name="vertrag"><?php echo getVertrag(); ?></select>
-                <select class="form-control" name="datum"><? getRecentDates(70); ?></select>
+                <select class="form-control" name="datum"><? getRecentDates(180); ?></select>
                 <select class="form-control" name="von"><option>von</option><? getTimelist(6); ?></select>
                 <select class="form-control" name="bis"><option>bis</option><? getTimelist(8); ?></select>
                 <select class="form-control" name="arbeit"><?php echo getArbeiten(); ?></select>
