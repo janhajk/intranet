@@ -16,14 +16,14 @@ $nav_arbeit = <<<EOL
                 <ul class="nav navbar-nav">
                     <li><a href="?p=arbeit.rechnungen">Invoices</a></li>
                     <li class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Time Reports <span class="caret"></span></a>
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Reports <span class="caret"></span></a>
                         <ul class="dropdown-menu" role="menu">
-                            <li><a href="$SITE_HTML/actions.php?a=xlsstunden&vertrag=0">xls</a></li>
+                            <li><a href="?p=arbeit.total">Totals/Sums</a></li>
+                            <li><a href="$SITE_HTML/actions.php?a=xlsstunden&vertrag=0">xls-Export</a></li>
                             <li><a href="?p=arbeit.timeline&timeline=1">Timeline</a></li>
                             <li><a href="?p=arbeit.graphs">Graphs</a></li>
                         </ul>
                     </li>
-                    <li><a href="?p=arbeit.total">Reports</a></li>
                     <li><a href="?p=arbeit.admin" class="navbar-brand"><span class="glyphicon glyphicon-wrench"></span></a></li>
                 </ul>
             </div>
