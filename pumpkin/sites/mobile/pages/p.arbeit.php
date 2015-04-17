@@ -2,7 +2,7 @@
 <? if(isset($_GET[$page]) && $_GET[$page] == $pages['Arbeit'][0] && canEnterBinary('0.0.0.0.1.0.0.0.0.1')) { ?>
     <div class="container" style="max-width:700px !important;">
         <nav role="navigation" class="navbar navbar-default navbar-fixed-top">
-			<ul class="nav navbar-nav" role="tablist">
+			<ul class="nav navbar-nav">
 				<li><a href="index.php"><span class="glyphicon glyphicon-home"></span></a></li>
                 <li class="active"><a href="?p=2">Business</a></li>
                 <li><a href="?p=arbeit.rechnungen">Invoices</a></li>
