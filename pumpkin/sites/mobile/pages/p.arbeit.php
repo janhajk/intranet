@@ -25,7 +25,7 @@
                     <li><a href="?p=arbeit.total">Contracts</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="?p=arbeit.admin"><span class="glyphicon glyphicon-wrench"></span></a></li>
+                    <li><a href="?p=arbeit.admin" class="navbar-brand"><span class="glyphicon glyphicon-wrench"></span></a></li>
                 </ul>
             </div>
         </nav>
