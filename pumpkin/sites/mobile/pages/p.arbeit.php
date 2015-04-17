@@ -27,7 +27,7 @@ $nav_arbeit = <<<EOL
             </div>
         </nav>
 EOL;
-
+?>
 <? // Arbeit Seite ?>
 <? if(isset($_GET[$page]) && $_GET[$page] == $pages['Arbeit'][0] && canEnterBinary('0.0.0.0.1.0.0.0.0.1')) { ?>
     <div class="container" style="max-width:700px !important;">
