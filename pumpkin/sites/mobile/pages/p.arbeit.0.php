@@ -1,4 +1,5 @@
 <?php
+$SITE_HTML = SITE_HTML;
 $nav_arbeit = <<<EOL
         <nav role="navigation" class="navbar navbar-default navbar-fixed-top">
             <div class="navbar-header">
@@ -17,7 +18,7 @@ $nav_arbeit = <<<EOL
                     <li class="dropdown">
                         <a class="dropdown-toggle" data-toggle="dropdown" href="#">Time Reports <span class="caret"></span></a>
                         <ul class="dropdown-menu" role="menu">
-                            <li><a href="<?=SITE_HTML;?>/actions.php?a=xlsstunden&vertrag=0">xls</a></li>
+                            <li><a href="$SITE_HTML/actions.php?a=xlsstunden&vertrag=0">xls</a></li>
                             <li><a href="?p=arbeit.timeline&timeline=1">Timeline</a></li>
                             <li><a href="?p=arbeit.graphs">Graphs</a></li>
                         </ul>
