@@ -9,7 +9,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a href="index.php"><span class="glyphicon glyphicon-home"></span></a>
+                <a href="index.php" class="navbar-brand"><span class="glyphicon glyphicon-home"></span></a>
             </div>
             <div id="navbarCollapse" class="collapse navbar-collapse">
                 <ul class="nav navbar-nav">
@@ -23,11 +23,10 @@
                         </ul>
                     </li>
                     <li><a href="?p=arbeit.total">Contracts</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
                     <li><a href="?p=arbeit.admin"><span class="glyphicon glyphicon-wrench"></span></a></li>
                 </ul>
-                <!--<ul class="nav navbar-nav navbar-right">
-                    <li><a href="#">Login</a></li>
-                </ul>-->
             </div>
         </nav>
         <h2>Business</h2>
