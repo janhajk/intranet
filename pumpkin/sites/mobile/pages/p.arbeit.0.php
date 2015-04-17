@@ -40,7 +40,7 @@ EOL;
                 <select class="form-control" name="von"><option>von</option><? getTimelist(6); ?></select>
                 <select class="form-control" name="bis"><option>bis</option><? getTimelist(8); ?></select>
                 <select class="form-control" name="arbeit"><?php echo getArbeiten(); ?></select>
-                <input type="text" class="form-control" id="comment" name="comment" placeholder="Arbeitsbeschrieb">
+                <input type="text" class="form-control" id="comment" name="comment" placeholder="Arbeitsbeschrieb" />
                 <input type="hidden" name="a" value="writeArbeit" />
                 <button type="submit" class="btn btn-default">Submit</button>
             </form>
