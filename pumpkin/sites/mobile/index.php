@@ -34,11 +34,10 @@
           <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
         <![endif]-->
 
-
         <?=getCSS();?>
         <?=loadJSTimeline();?>
     </head>
-    <body <?=onLoadTimeline();?> onresize="">
+    <body <?=onLoadTimeline();?> onresize="" style="padding-top: 70px;">
         <?php
             if(isset($_SESSION['msg'])){
                 echo "<div class=\"msg\">".$_SESSION['msg']."</div>";

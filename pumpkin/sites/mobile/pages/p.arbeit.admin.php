@@ -1,7 +1,7 @@
 <? // Arbeit.Stunden Seite ?>
 <? if(isset($_GET[$page]) && $_GET[$page] == 'arbeit.admin' && canEnterBinary('0.0.0.0.0.0.0.0.0.1')) {	?>
+    <div class="container" style="max-width:700px !important;">
         <?php echo $nav_arbeit; ?>
-        <div class="container" style="max-width:700px !important;">
         <h2>Admin</h2>
         <h3>New Contract</h3>
         <form role="form" action="<?=SITE_HTML;?>/actions.php" method="post">
