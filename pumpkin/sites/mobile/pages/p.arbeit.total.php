@@ -2,27 +2,23 @@
 <? if(isset($_GET[$page]) && $_GET[$page] == 'arbeit.total' && canEnterBinary('0.0.0.0.0.0.0.0.0.1')) {	?>
     <div class="container" style="max-width:700px !important;">
         <?php echo $nav_arbeit; ?>
-        <h2>Totals</h2>
-        <div>
-            <h3>per contract</h3>
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th>Contract</th>
-                        <th>Total Hours</th>
-                        <th>CHF/h</th>
-                        <th>Sum</th>
-                    </tr>
-                </thead>
-                <? getTotalVertrag(); ?>
-            </table>
-        </div>
-        <div>
-            <h3>Annual</h3>
-            <table class="table">
-                <? for ($i=date('Y');$i>2007;$i--){getTotalJahr($i);} ?>
-            </table>
-        </div>
+        <h2>Reports</h2>
+        <h3>Annual</h3>
+        <table class="table">
+            <? for ($i=date('Y');$i>2007;$i--){getTotalJahr($i);} ?>
+        </table>
+        <h3>per contract</h3>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Contract</th>
+                    <th>Total Hours</th>
+                    <th>CHF/h</th>
+                    <th>Sum</th>
+                </tr>
+            </thead>
+            <? getTotalVertrag(); ?>
+        </table>
     </div>
 <? } ?>
 <?

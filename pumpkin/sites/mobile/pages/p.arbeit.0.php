@@ -22,7 +22,7 @@ $nav_arbeit = <<<EOL
                             <li><a href="?p=arbeit.graphs">Graphs</a></li>
                         </ul>
                     </li>
-                    <li><a href="?p=arbeit.total">Contracts</a></li>
+                    <li><a href="?p=arbeit.total">Reports</a></li>
                     <li><a href="?p=arbeit.admin" class="navbar-brand"><span class="glyphicon glyphicon-wrench"></span></a></li>
                 </ul>
             </div>
