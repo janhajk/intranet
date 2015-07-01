@@ -63,6 +63,7 @@ $nav_geld = '
 		?>
         <div style="margin-bottom:10px">
             <p><a href="<?=$g['url'];?>"><?=$g['descr'];?></a></p>
+            <p><?php echo getStocksCount($g['id']); ?></p>
             <div id="visualization<?=$g['id'];?>" style="height: 200px;"></div>
         </div>
 		<? } ?>
