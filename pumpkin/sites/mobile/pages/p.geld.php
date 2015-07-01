@@ -1,6 +1,20 @@
+<?php
+$nav_geld = "?>
+        <nav role="navigation" class="navbar navbar-default navbar-fixed-top">
+            <div class="navbar-header">
+                <button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="index.php" class="navbar-brand"><span class="glyphicon glyphicon-home"></span></a>
+                <a href="<?=USER_ACT;?>/cronjob.stocks.php" class="navbar-brand">Update</a>
+            </div>
+        </nav>
+<?php "; ?>
 <? // Geld Seite ?>
 <? if(isset($_GET[$page]) && $_GET[$page] == $pages['Kurse'][0] && canEnterBinary('0.0.0.0.0.0.0.0.0.1')) { ?>
-    
     <script type="text/javascript" src="http://www.google.com/jsapi"></script>
     <script type="text/javascript">
       google.load('visualization', '1', {'packages':['annotatedtimeline']});

@@ -105,29 +105,38 @@ function searchKurs($search, $url, $day=0) {
 	if (count($treffer)>=2) {return $treffer[1];} else { return false; }
 }
 
-/**
+/*
  * Erstellt ein Diagramm mit dem Kurs pid
- * 
+ *
  * @param integer $pid Die Kurs-Id
  * @return string Die Google Diagramm Url
  */
 function diagramFonds($pid) {
-	$db = $GLOBALS['db'];
-  $sql = "SELECT date, kurs FROM `stocks_kurse` WHERE pid = '$pid' ORDER BY id DESC";
-	$db->query($sql);
-	$dayvalue = array();
-	while($v = $db->results()) {
-		$dayvalue[mktime(
+    $db = $GLOBALS['db'];
+    $sql = "SELECT date, kurs FROM `stocks_kurse` WHERE pid = '$pid' ORDER BY id DESC";
+    $db->query($sql);
+    $dayvalue = array();
+    while($v = $db->results()) {
+        $dayvalue[mktime(
             0, 0, 0,
             (int)substr($v['date'],5,2),
             (int)substr($v['date'],8,2),
             (int)substr($v['date'],0,4))*1000] = $v['kurs'];
-	}		
-	$data = array();
-	foreach ($dayvalue as $day=>$kurs) {
-    $data[] = "[new Date(".$day."), ".$kurs."]";
-	}
-  return array(implode($data,','), min($dayvalue), max($dayvalue));
+    }
+    $data = array();
+    foreach ($dayvalue as $day=>$kurs) {
+        $data[] = "[new Date(".$day."), ".$kurs."]";
+    }
+    return array(implode($data,','), min($dayvalue), max($dayvalue));
+}
+
+function getStocksCount($pid) {
+    $pid = (int) $pid;
+    $db = $GLOBALS['db'];
+    $sql = 'SELECT * FROM stocks_besitz WHERE pid = '.$pid.' ORDER BY date DESC LIMIT 0,1';
+    $db->query($sql);
+    $count = $db->results();
+    return $count['amount'];
 }
 
 
