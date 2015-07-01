@@ -5,6 +5,7 @@
 // **************************************************************************************************
 	//updateStatsStocks();
 	stocks_update();
+    echo '<script>(function(){window.setTimeout(function(){window.location.href = "index.php?p=1";}, 5000);}})();</script>';
 // **************************************************************************************************
 	//Lib schliessen
 	endlib();			// from lib/lib.php
