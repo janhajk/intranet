@@ -58,7 +58,7 @@ function writeKurs($id) {
 	else {
 		return 'kein Eintrag gefunden';
 	}
-}	
+}
 
 /**
  * Holt einen Kurs von der Kurs-Wbeseite ab

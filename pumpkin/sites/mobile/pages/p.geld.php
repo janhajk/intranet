@@ -10,7 +10,7 @@ $nav_geld = '
                     <span class="icon-bar"></span>
                 </button>
                 <a href="index.php" class="navbar-brand"><span class="glyphicon glyphicon-home"></span></a>
-                <a href="'.$USER_ACT.'/cronjob.stocks.php" class="navbar-brand">Update</a>
+                <a href="'.$USER_ACT.'/cronjob.stocks.php" class="navbar-brand"><span class="glyphicon glyphicon-refresh"></span></a>
             </div>
         </nav>
 ';
@@ -54,7 +54,7 @@ $nav_geld = '
 
 
     <div class="container">
-        <a href="index.php" role="button" class="btn btn-default btn-sm btn-block">back</a>
+        <?php echo $nav_geld; ?>
         <h2><?php echo $pages['Kurse'][1]; ?></h2>
         <p><a href="<?=USER_ACT;?>/cronjob.stocks.php"><span class="glyphicon glyphicon-refresh"></span></a></p>
         <p>Total Value: <?=pmkCurrency(stocks_totalFonds()); ?></p>
@@ -62,7 +62,7 @@ $nav_geld = '
 		foreach($kurven as $g) {
 		?>
         <div style="margin-bottom:10px">
-            <p><a href="<?=$g['url'];?>"><?=$g['descr'];?></a> amt: <?php echo getStocksCount($g['id']); ?></p>
+            <p><a href="<?=$g['url'];?>"><?=$g['descr'];?></a> (amt: <?php echo getStocksCount($g['id']); ?>, )</p>
             <p></p>
             <div id="visualization<?=$g['id'];?>" style="height: 200px;"></div>
         </div>
