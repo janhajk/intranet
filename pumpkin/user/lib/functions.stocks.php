@@ -112,22 +112,21 @@ function searchKurs($search, $url, $day=0) {
  * @return string Die Google Diagramm Url
  */
 function diagramFonds($pid) {
+    $pid = (int) $pid;
     $db = $GLOBALS['db'];
-    $sql = "SELECT date, kurs FROM `stocks_kurse` WHERE pid = '$pid' ORDER BY id DESC";
+    $sql = 'SELECT date, kurs FROM stocks_kurse WHERE pid = '.$pid.' ORDER BY id DESC';
     $db->query($sql);
     $dayvalue = array();
+    $jsTimestamp = 0;
     while($v = $db->results()) {
-        $dayvalue[mktime(
-            0, 0, 0,
-            (int)substr($v['date'],5,2),
-            (int)substr($v['date'],8,2),
-            (int)substr($v['date'],0,4))*1000] = $v['kurs'];
+        $jsTimestamp = mktime(0, 0, 0, (int)substr($v['date'],5,2), (int)substr($v['date'],8,2), (int)substr($v['date'],0,4))*1000;
+        $dayvalue[$jsTimestamp] = $v['kurs'];
     }
     $data = array();
-    foreach ($dayvalue as $day=>$kurs) {
-        $data[] = "[new Date(".$day."), ".$kurs."]";
+    foreach ($dayvalue as $timestamp=>$kurs) {
+        $data[] = "[new Date(".$timestamp."), ".$kurs."]";
     }
-    return array(implode($data,','), min($dayvalue), max($dayvalue));
+    return implode($data,',');
 }
 
 function getStocksCount($pid) {

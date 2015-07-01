@@ -24,19 +24,14 @@ $nav_geld = '
     <script type="text/javascript">
       <?php
       $kurven = array();
-      $db->query("SELECT * FROM stocks_names");
+      $db->query('SELECT * FROM stocks_names');
       while($r = $db->results()) { $kurven[] = $r; }
       foreach($kurven as $g) { ?>
         function drawVisualization<?=$g['id']; ?>() {
           var data = new google.visualization.DataTable();
           data.addColumn('date', 'Date');
           data.addColumn('number', 'Kurs');
-          data.addRows(
-            eval([<?php
-              $data = diagramFonds($g['id']);
-              print $data[0];
-            ?>])
-          );
+          data.addRows(eval([<?php print diagramFonds($g['id']); ?>]));
           var chart = new google.visualization.AnnotatedTimeLine(document.getElementById('visualization<?=$g['id']; ?>'));
           chart.draw(data, {
             displayAnnotations: true,
@@ -51,16 +46,12 @@ $nav_geld = '
       <? } ?>
     </script>
 
-
-
     <div class="container">
         <?php echo $nav_geld; ?>
         <h2><?php echo $pages['Kurse'][1]; ?></h2>
-        <p><a href="<?=USER_ACT;?>/cronjob.stocks.php"><span class="glyphicon glyphicon-refresh"></span></a></p>
         <p>Total Value: <?=pmkCurrency(stocks_totalFonds()); ?></p>
 		<?php
-		foreach($kurven as $g) {
-		?>
+		foreach($kurven as $g) { ?>
         <div style="margin-bottom:10px">
             <p><a href="<?=$g['url'];?>"><?=$g['descr'];?></a> (amt: <?php echo getStocksCount($g['id']); ?>, )</p>
             <p></p>
