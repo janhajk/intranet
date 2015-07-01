@@ -58,7 +58,7 @@ $nav_geld = '
 		<?php
 		foreach($kurven as $g) { ?>
         <div style="margin-bottom:10px">
-            <p><a href="<?=$g['url'];?>"><?=$g['descr'];?></a> (amt: <?php echo getStocksCount($g['id']); ?>, )</p>
+            <p><a href="<?=$g['url'];?>"><?=$g['descr'];?></a> (amt: <?php echo getStocksCount($g['id']); ?>)</p>
             <p></p>
             <div id="visualization<?=$g['id'];?>" style="height: 200px;"></div>
         </div>
