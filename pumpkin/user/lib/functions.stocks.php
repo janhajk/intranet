@@ -117,16 +117,18 @@ function diagramFonds($pid) {
     $sql = 'SELECT date, kurs FROM stocks_kurse WHERE pid = '.$pid.' ORDER BY id DESC';
     $db->query($sql);
     $dayvalue = array();
-    $jsTimestamp = 0;
     while($v = $db->results()) {
-        $jsTimestamp = mktime(0, 0, 0, (int)substr($v['date'],5,2), (int)substr($v['date'],8,2), (int)substr($v['date'],0,4))*1000;
-        $dayvalue[$jsTimestamp] = $v['kurs'];
+        $dayvalue[mktime(
+            0, 0, 0,
+            (int)substr($v['date'],5,2),
+            (int)substr($v['date'],8,2),
+            (int)substr($v['date'],0,4))*1000] = $v['kurs'];
     }
     $data = array();
-    foreach ($dayvalue as $timestamp=>$kurs) {
-        $data[] = "[new Date(".$timestamp."), ".$kurs."]";
+    foreach ($dayvalue as $day=>$kurs) {
+        $data[] = "[new Date(".$day."), ".$kurs."]";
     }
-    return implode($data,',');
+    return array(implode($data,','), min($dayvalue), max($dayvalue));
 }
 
 function getStocksCount($pid) {

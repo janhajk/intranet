@@ -31,7 +31,12 @@ $nav_geld = '
           var data = new google.visualization.DataTable();
           data.addColumn('date', 'Date');
           data.addColumn('number', 'Kurs');
-          data.addRows(eval([<?php print diagramFonds($g['id']); ?>]));
+          data.addRows(
+            eval([<?php
+              $data = diagramFonds($g['id']);
+              print $data[0];
+            ?>])
+          );
           var chart = new google.visualization.AnnotatedTimeLine(document.getElementById('visualization<?=$g['id']; ?>'));
           chart.draw(data, {
             displayAnnotations: true,
