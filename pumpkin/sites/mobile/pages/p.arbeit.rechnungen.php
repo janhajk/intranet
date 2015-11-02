@@ -11,7 +11,7 @@
             <button type="submit" value="ok" class="btn btn-default">ok</button>
             <input type="hidden" name="a" value="makeBill" />
         </form>
-        <p></p><p>Total unpaid invoices:  CHF&nbsp;<?=number_format(getBillsOpenBetrag(),2,",","'");?></p>
+        <p></p><p>Total unpaid invoices:  CHF&nbsp;<?=number_format(getBillsOpenBetrag(),2,".","'");?></p>
         <table class="table table-hover">
                 <thead>
                     <tr>
@@ -32,7 +32,7 @@
                     <td><a href="?p=arbeit.rechnungen.edit&id=<?=$aa['id'];?>"><?=$aa['id'];?></a></td>
                     <td><?=$aa['bis'];?></td>
                     <td><?php echo getVertragTitle($aa['vertrag']);?></td>
-                    <td align="right"><?=number_format(getRechnungsTotal($aa['id']),2,",","'");?></td>
+                    <td align="right"><?=number_format(getRechnungsTotal($aa['id']),2,".","'");?></td>
                     <td>
                         <a href="<?=SITE_HTML;?>/actions.php?a=changeBillStatus&b=<?=$aa['id'];?>&s=<?=$aa['status'];?>" title="<?php echo $statusTitle[$aa['status']];?>">
                             <span class="glyphicon glyphicon-<?php echo $statusIcon[$aa['status']];?>"></span>

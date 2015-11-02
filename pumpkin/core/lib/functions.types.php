@@ -7,7 +7,7 @@ function pmkCurrency($number, $precidingPlus=false) {
    $n = '';
 
    // Formatierung mit Tausenderstriche und Rundung auf Null Kommastellen
-   $n = number_format($number,0,",","'").'.-';
+   $n = number_format($number,0,".","'").'.-';
 
    // Vorangehendes "+", wenn positiver Betrag und $precidingPlus = true
    if($precidingPlus){
