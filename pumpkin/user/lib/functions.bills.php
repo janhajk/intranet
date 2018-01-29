@@ -311,9 +311,6 @@ function make_background($pdf) {
 	$pdf->SetY(5);
 	$pdf->SetFont('helvetica','B',16);
 	$pdf->Cell(190,8,$config['myname'],0,1,'R',0);
-	$pdf->SetFont('helvetica','B',9);
-	$pdf->Cell(190,4,'Projekt- und IT-Berater',0,1,'R',0);
-	$pdf->Cell(190,4,'im Baumanagement',0,1,'R',0);
 	$pdf->SetFont('helvetica','',9);
 	$pdf->Cell(190,4,$config['strasse'].' '.$config['plz'].' '.$config['ort'],0,1,'R',0);
 	$pdf->Cell(190,4,'Tel: '.$config['telefon'],0,1,'R',0);
