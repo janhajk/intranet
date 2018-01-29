@@ -369,7 +369,7 @@ function Abrechnungstabelle($header,$data, $pdf)
 		$pdf->Cell($w[4],6,number_format($total,2,",","`"),'LRB',0,'R',$fill);
 		$pdf->Ln();
         $pdf->Cell($w[0],6,'',0,0,'C',$fill);$pdf->Cell($w[1],6,'',0,0,'L',$fill);  // Leere Zellen
-        $pdf->Cell($w[2]+$w[3],6,'MWST zum Satz von 7.6%','LRB',0,'R',$fill);
+        $pdf->Cell($w[2]+$w[3],6,'MWST zum Satz von 7.7%','LRB',0,'R',$fill);
 		$pdf->Cell($w[4],6,'keine MWST','LRB',0,'R',$fill);
 		$pdf->Ln();
         $pdf->Cell($w[0],6,'',0,0,'C',$fill);$pdf->Cell($w[1],6,'',0,0,'L',$fill);  // Leere Zellen
