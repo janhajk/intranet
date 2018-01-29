@@ -354,7 +354,7 @@ function Abrechnungstabelle($header,$data, $pdf)
         $pdf->Cell($w[0],6,$GLOBALS['bis'],'LR',0,'C',$fill);
         $pdf->Cell($w[1],6,utf8_decode($row['arbeitsbeschrieb']),'LR',0,'L',$fill);
         $pdf->Cell($w[2],6,number_format($row['nettoansatz'],2,",","`"),'LR',0,'R',$fill);
-        $pdf->Cell($w[3],6,(round($row['total'],2)).' h','LR',0,'R',$fill);
+        $pdf->Cell($w[3],6,(round($row['total'],2)),'LR',0,'R',$fill);
 		$pdf->Cell($w[4],6,number_format($row['nettoansatz']*$row['total'],2,",","`"),'LR',0,'R',$fill);
 		$total+=$row['nettoansatz']*$row['total'];
         $pdf->Ln();
