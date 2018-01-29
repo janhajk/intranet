@@ -114,7 +114,7 @@
 // **************************************************************************************************
 // Tabelle mit Stunden und Beträgen
 // **************************************************************************************************
-	$header = array('DATUM', 'BESCHREIBUNG', 'ANSATZ A H', 'ANZAHL', 'KOSTEN CHF');
+	$header = array('DATUM', 'BESCHREIBUNG', 'EHP', 'MENGE', 'KOSTEN CHF');
 // **************************************************************************************************
 	// Daten für die Arbeitsbeschriebgruppierten Zeilen
 	$data = array();
