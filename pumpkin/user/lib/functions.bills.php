@@ -320,6 +320,8 @@ function make_background($pdf) {
 	$pdf->SetFont('helvetica','I',9);
 	$pdf->Cell(190,4,'e-mail: '.$config['email'],0,1,'R',0);
 	$pdf->Cell(190,4,'internet: '.$config['www'],0,1,'R',0);
+   $pdf->Cell(190,4,'UID: '.$config['uid'],0,1,'R',0);
+   
 	// Rechnugsnummer
 	$pdf->SetY(45);
 	$pdf->SetFont('helvetica','B',9);
