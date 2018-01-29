@@ -413,8 +413,8 @@ function stundenrapport($pdf) {
 	$pdf->SetFont('Arial','',9);
 		// Begin: Header
 		$pdf->Cell(18,7,'Datum',1);
-		$pdf->Cell(50,7,'Arbeit',1);
-		$pdf->Cell(17,7,'Anz',1);
+		$pdf->Cell(55,7,'Arbeit',1);
+		$pdf->Cell(12,7,'Anz',1);
 		$pdf->Cell(10,7,'von',1);
 		$pdf->Cell(10,7,'bis',1);
 		$pdf->Cell(86,7,'Leistungsbeschrieb',1);
@@ -425,8 +425,8 @@ function stundenrapport($pdf) {
 	foreach($stunden as $entry) {
 		// Begin: Auflistung
 		$pdf->Cell(18,6, date_mysql2german($entry['date']),1);
-		$pdf->Cell(50,6,utf8_decode($entry['arbeitsbeschrieb']),1);
-		$pdf->Cell(17,6,$entry['stunden'],1);
+		$pdf->Cell(55,6,utf8_decode($entry['arbeitsbeschrieb']),1);
+		$pdf->Cell(12,6,$entry['stunden'],1);
 		$pdf->Cell(10,6,substr($entry['von'],0,5),1);
 		$pdf->Cell(10,6,substr($entry['bis'],0,5),1);
 		$pdf->Cell(86,6,substr(utf8_decode($entry['comment']),0,90),1);
