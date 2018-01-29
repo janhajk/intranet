@@ -334,6 +334,7 @@ function Abrechnungstabelle($header,$data, $pdf)
     $pdf->SetDrawColor(50,92,142);
     $pdf->SetFont('','B',9);
     //Header
+    // Breite der Spalten in mm (Total=191)
     $w=array(23,87,26,27,28);
     $pdf->SetLineWidth(.6);
 	$pdf->Cell(array_sum($w),0,'','T');  // Letzte Linie unten
@@ -409,14 +410,14 @@ function stundenrapport($pdf) {
 	$pdf->SetY(50);
 	$pdf->SetFont('','B',15);
 	$pdf->Cell(190,10,'Stunderapport',0,1,'L',0);
-	$pdf->SetFont('Arial','',9); 
+	$pdf->SetFont('Arial','',9);
 		// Begin: Header
 		$pdf->Cell(18,7,'Datum',1);
-		$pdf->Cell(60,7,'Arbeit',1);
-		$pdf->Cell(7,7,'h',1);
+		$pdf->Cell(50,7,'Arbeit',1);
+		$pdf->Cell(17,7,'Anz',1);
 		$pdf->Cell(10,7,'von',1);
 		$pdf->Cell(10,7,'bis',1);
-		$pdf->Cell(86,7,'Kommentar',1);
+		$pdf->Cell(86,7,'Leistungsbeschrieb',1);
 		// Ende: Header
 		//neue Zeile
 		$pdf->Ln();
