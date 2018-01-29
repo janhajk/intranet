@@ -444,8 +444,8 @@ function stundenrapport($pdf) {
 	$db->query($sql);
 	$entry = $db->results();
 		$pdf->Cell(18, 6, '',1);
-		$pdf->Cell(60,6,'Total',1,'R');
-		$pdf->Cell(7,6,round($entry['total'],2),1);
+		$pdf->Cell(55,6,'Total',1,'R');
+		$pdf->Cell(12,6,round($entry['total'],2),1);
 		$pdf->Cell(96,6,'',0);
 	$pdf->SetAutoPageBreak(false);
 }
