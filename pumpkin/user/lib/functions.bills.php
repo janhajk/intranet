@@ -425,8 +425,8 @@ function stundenrapport($pdf) {
 	foreach($stunden as $entry) {
 		// Begin: Auflistung
 		$pdf->Cell(18,6, date_mysql2german($entry['date']),1);
-		$pdf->Cell(60,6,utf8_decode($entry['arbeitsbeschrieb']),1);
-		$pdf->Cell(7,6,$entry['stunden'],1);
+		$pdf->Cell(50,6,utf8_decode($entry['arbeitsbeschrieb']),1);
+		$pdf->Cell(17,6,$entry['stunden'],1);
 		$pdf->Cell(10,6,substr($entry['von'],0,5),1);
 		$pdf->Cell(10,6,substr($entry['bis'],0,5),1);
 		$pdf->Cell(86,6,substr(utf8_decode($entry['comment']),0,90),1);
