@@ -48,7 +48,7 @@ class clsdb {
         function open() {
 
                 if($this->db_status != "connected") {
-                        if(!($this->connectid = @mysqli_connect($this->host, $this->user, $this->password))) {
+                        if(!($this->connectid = mysqli_connect($this->host, $this->user, $this->password))) {
                                 $this->db_status = "disconnected";
                                 $this->errormessage = mysqli_error($this->connectid);
                                 $this->errornumber = mysqli_errno($this->connectid);
