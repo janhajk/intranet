@@ -121,7 +121,7 @@ class clsdb {
         }
 
         // function to get last errormessage
-        function db_com_get_last_error($this->connectid) {
+        function db_com_get_last_error() {
 
                 return ($this->errornumber . " : " . $this->errormessage);
         }
