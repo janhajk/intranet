@@ -50,8 +50,8 @@ class clsdb {
                 if($this->db_status != "connected") {
                         if(!($this->connectid = @mysqli_connect($this->host, $this->user, $this->password))) {
                                 $this->db_status = "disconnected";
-                                $this->errormessage = mysqli_error();
-                                $this->errornumber = mysqli_errno();
+                                $this->errormessage = mysqli_error($this->connectid);
+                                $this->errornumber = mysqli_errno($this->connectid);
                                 return 0;
                         }
                         else {
@@ -71,8 +71,8 @@ class clsdb {
         function select() {
                 if($this->db_status == "connected") {
                         if(!mysqli_select_db($this->connectid, $this->dbname)) {
-                                $this->errormessage = mysqli_error();
-                                $this->errornumber = mysqli_errno();
+                                $this->errormessage = mysqli_error($this->connectid);
+                                $this->errornumber = mysqli_errno($this->connectid);
                                 return 0;
                         }
                         else {
@@ -90,8 +90,8 @@ class clsdb {
 
                 if($this->db_status == "connected") {
                         if(!$this->result = mysqli_query($this->connectid, $query)) {
-                                $this->errormessage = mysqli_error();
-                                $this->errornumber = mysqli_errno();
+                                $this->errormessage = mysqli_error($this->connectid);
+                                $this->errornumber = mysqli_errno($this->connectid);
                                 return 0;
                         }
                         else {
@@ -115,13 +115,13 @@ class clsdb {
                         return 0;
                 }
                 else {
-						//return mysql_error();
+						//return mysql_error($this->connectid);
                         return mysqli_fetch_array($this->result, $this->assoc);
                 }
         }
 
         // function to get last errormessage
-        function db_com_get_last_error() {
+        function db_com_get_last_error($this->connectid) {
 
                 return ($this->errornumber . " : " . $this->errormessage);
         }
@@ -133,8 +133,8 @@ class clsdb {
 
                 if($this->db_status == "connected") {
                         if(!mysqli_close($this->connectid)) {
-                                $this->errornumber = mysqli_errno();
-                                $this->errormessage = mysqli_error();
+                                $this->errornumber = mysqli_errno($this->connectid);
+                                $this->errormessage = mysqli_error($this->connectid);
                                 return 0;
                         }
                         else {
