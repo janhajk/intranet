@@ -1,7 +1,7 @@
-<?
+<?php
 // **************************************************************************************************
 	//Lib laden
-	include(current(split("httpdocs",dirname(__FILE__))).'httpdocs/bin/lib/lib.php');
+	include(current(explode("httpdocs",dirname(__FILE__))).'httpdocs/bin/lib/lib.php');
 // **************************************************************************************************
 	header('Content-Type: text/html; charset=iso-8859-1');
 // **************************************************************************************************
@@ -14,6 +14,6 @@
 	echo $state;
 // **************************************************************************************************
 	//Lib schliessen
-	include(current(split("httpdocs",dirname(__FILE__))).'httpdocs/bin/lib/lib.end.php');
+	include(current(explode("httpdocs",dirname(__FILE__))).'httpdocs/bin/lib/lib.end.php');
 // **************************************************************************************************
 ?>

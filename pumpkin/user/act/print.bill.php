@@ -11,7 +11,7 @@
 	{
 		$this->Ellipse($x, $y, $r, $r, $style);
 	}
-	
+
 	function Ellipse($x, $y, $rx, $ry, $style='D')
 	{
 		if($style=='F')
@@ -89,7 +89,7 @@
 	$pdf->Cell(190,5,$config['hello'].',',0,1,'L',0);
 	$pdf->Cell(190,5,$config['text'].' \''.$vertragsinfos['arbeitstitel'].'\'',0,1,'L',0);
 	$pdf->SetY(230);
-	$gruss = split("%%",$config['gruss']);
+	$gruss = explode("%%",$config['gruss']);
 	$pdf->Cell(190,5,$gruss[0],0,1,'L',0);
 	$pdf->Cell(190,5,$gruss[1],0,1,'L',0);
 	$pdf->SetY(265);

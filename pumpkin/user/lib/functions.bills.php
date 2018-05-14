@@ -1,4 +1,4 @@
-<?
+<?php
 // **************************************************************************************************
 // Holt die Konfigurationseinstellungen für das die Rechnung
 // **************************************************************************************************
@@ -264,7 +264,7 @@ function einzahlungsschein($pdf, $totalbetrag) {
 		$totalbetrag = number_format($totalbetrag,2,'.','');
 		$rappen = substr($totalbetrag,strlen($totalbetrag)-2);
 		$franken = substr($totalbetrag,0,strlen($totalbetrag)-3);
-		$betragsteile = split('.',$totalbetrag,1);
+		$betragsteile = explode('.',$totalbetrag,1);
 		$pdf->SetFont('helvetica','B',9);
 		$pdf->SetTextColor(0, 0, 0);
 		for($s=strlen($franken)-1;$s>=0;$s--) {

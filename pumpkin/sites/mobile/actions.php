@@ -10,8 +10,8 @@
 		switch($_POST['a']) {
 			case 'writeArbeit':
 				if(canEnterBinary('0.0.0.0.1.0.0.0.0.1')) {
-					$zeit_von = split(":", $_POST['von']);
-					$zeit_bis = split(":", $_POST['bis']);
+					$zeit_von = explode(":", $_POST['von']);
+					$zeit_bis = explode(":", $_POST['bis']);
 					$stunden = (mktime($zeit_bis[0],$zeit_bis[1],0,1,1,2000)-mktime($zeit_von[0],$zeit_von[1],0,1,1,2000))/60/60;
 					$sql = "INSERT INTO `rap_stunden` (`date`, `vertrag`, `arbeit`, `comment`, `von`, `bis`, `stunden`, `uid`) VALUES ('".date_german2mysql($_POST['datum'])."','".$_POST['vertrag']."','".$_POST['arbeit']."','".$_POST['comment']."','".$_POST['von'].":00"."','".$_POST['bis'].":00"."','".$stunden."', '".$_SESSION['myid']."')";
 					$db->query($sql);
@@ -20,8 +20,8 @@
 				break;
 			case 'editArbeitStunden':
 				if(canEnterBinary('0.0.0.0.1.0.0.0.0.1') && canUserEditStunde($_POST['id'])) {
-					$zeit_von = split(":", $_POST['von']);
-					$zeit_bis = split(":", $_POST['bis']);
+					$zeit_von = explode(":", $_POST['von']);
+					$zeit_bis = explode(":", $_POST['bis']);
 					$stunden = (mktime($zeit_bis[0],$zeit_bis[1],0,1,1,2000)-mktime($zeit_von[0],$zeit_von[1],0,1,1,2000))/60/60;
 					// Instead of overwriting, old entry is deleted, new one is created
 					$db->query("DELETE FROM rap_stunden WHERE ID = '".$_POST['id']."'");

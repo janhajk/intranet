@@ -1,10 +1,10 @@
 <?
 
-//Lädt eine Datei herunter (rechtsprüfung wurde ist schon erfolgt
+//Lï¿½dt eine Datei herunter (rechtsprï¿½fung wurde ist schon erfolgt
 function downloadFile($id, $ext, $title, $path='') {
 	$filename = $GLOBALS['ROOT_PATH'].'/files/'.$path.''.$id.'.'.$ext;
 	$outname = $title.'.'.$ext;
-	// Für IE leerzeichen ersetzten durch '%20'
+	// Fï¿½r IE leerzeichen ersetzten durch '%20'
 	if(substr_count(strtoupper(getenv("HTTP_USER_AGENT")),"MSIE" )>0)
 	{$outname=str_replace ( " ","%20",$outname);}
 		
@@ -41,14 +41,14 @@ function downloadFile($id, $ext, $title, $path='') {
 // Gibt die Dateiendung einer Datei
 function strip_ext($filename) {
 	$filename = strtolower($filename) ;
-	$exts = split("[/\\.]", $filename) ;
+	$exts = explode("[/\\.]", $filename) ;
 	$n = count($exts)-1;
 	$exts = $exts[$n];
 	return $exts;
 }
 
 
-// Gibt Dateiname und Endung in einem Array zurück
+// Gibt Dateiname und Endung in einem Array zurï¿½ck
 function getFileNameInfo($filename){
    if(strrpos($filename, '.')){
        //Everything before last '.' in $filename.
@@ -86,7 +86,7 @@ function Dateigroesse($URL)
 }
 
 
-// Zählt die Anzahl Zeilen in einem Verzeichnis und gibt Dateien und Ordner als Liste aus
+// Zï¿½hlt die Anzahl Zeilen in einem Verzeichnis und gibt Dateien und Ordner als Liste aus
 function CountLines_list($it, $ende){
 	$a = 0;
 	$end = explode(",", $ende);	
@@ -119,7 +119,7 @@ function CountLines_list($it, $ende){
 
 $TotalProjectLines = 0;
 
-// Zählt die Anzahl Zeilen in einem Verzeichnis
+// Zï¿½hlt die Anzahl Zeilen in einem Verzeichnis
 function CountLines($it, $ende){
 	$end = explode(",", $ende);	
 	for(;$it->valid();$it->next()){

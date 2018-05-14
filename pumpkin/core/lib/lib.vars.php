@@ -21,7 +21,7 @@
 	// GLOBAL PMKROOT
 	// Rootverzeichnis System von Pumpkin sans trailing '/'
 	$pmkroot = '';
-	$proot = split('/',dirname(__FILE__));
+	$proot = explode('/',dirname(__FILE__));
 	$key = array_search('pumpkin',$proot);
 	for($i=0;$i<=$key;$i++) { $pmkroot .= $proot[$i].'/'; }
 	define('PMKROOT', substr($pmkroot,0,count($pmkroot)-2));

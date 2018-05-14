@@ -1,4 +1,4 @@
-<?
+<?php
 // **************************************************************************************************
 	//Lib laden
 	$pmkCaller = '../../../';	//  Because its called from a subfolder
@@ -23,7 +23,7 @@
 	$events = '';
 	foreach($stunden as $key=>$val) {
 		$tmp = '';
-		$datum = split('-',$val['date']);
+		$datum = explode('-',$val['date']);
 		$von = $val['date']."T".$val['von']."Z";
 		$bis = $val['date']."T".$val['bis']."Z";
 		//$tmp = 'new date('.$datum[0].','.((int)$datum[1]-1).','.(int)$datum[2]	.')';
@@ -39,10 +39,10 @@
 	$json = "{".$json."}";
 	header('Cache-Control: no-cache, must-revalidate');
 	header('Content-type: application/json');
-	print $json;	
+	print $json;
 // **************************************************************************************************
 	//Lib schliessen
-	include(current(split("httpdocs",dirname(__FILE__))).'httpdocs/bin/lib/lib.end.php');
+	include(current(explode("httpdocs",dirname(__FILE__))).'httpdocs/bin/lib/lib.end.php');
 // **************************************************************************************************
-	
+
 ?>

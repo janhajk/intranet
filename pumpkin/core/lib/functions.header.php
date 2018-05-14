@@ -1,4 +1,4 @@
-<?
+<?php
 function writeHTMLHeader() {
 	echo '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">';
 	echo '<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">';
@@ -29,7 +29,7 @@ function loadJSFiles() {
 	$jsString = '';
 	$files = pmkGetFileTypeList('js');
 	foreach($files as $v) {
-		if(end(split('/',$v)) != 'jquery-1.2.6.min.js' && end(split('/',$v)) != 'ui.datepicker.js') {
+		if(end(explode('/',$v)) != 'jquery-1.2.6.min.js' && end(explode('/',$v)) != 'ui.datepicker.js') {
 			$jsString .= PMKHTTP.'/'.$v.',';
 		}
 	}
@@ -43,7 +43,7 @@ function pmkGetFileTypeList($extension) {
 	foreach($extFiles as $f) {
 		$proot = $f;
 		$pmkroot = '';
-		$proot = split('/',$proot);
+		$proot = explode('/',$proot);
 		$key = array_search('pumpkin',$proot);
 		for($i=$key+1;$i<count($proot);$i++) { $pmkroot .= $proot[$i].'/'; }
 		$pmkroot = substr($pmkroot,0,count($pmkroot)-2);
