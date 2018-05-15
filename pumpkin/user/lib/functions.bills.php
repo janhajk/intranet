@@ -349,7 +349,8 @@ function Abrechnungstabelle($header,$data, $pdf)
     $pdf->SetFont('');
     //Data
     $fill=0;
-	$total = 0;
+	 $total = 0;
+    echo '<pre>'.print_r($row,1).'</pre>';
     foreach($data as $row)
     {
         $pdf->Cell($w[0],6,$GLOBALS['bis'],'LR',0,'C',$fill);
@@ -379,7 +380,7 @@ function Abrechnungstabelle($header,$data, $pdf)
       $pdf->Cell($w[0],6,'',0,0,'C',$fill);$pdf->Cell($w[1],6,'',0,0,'L',$fill);  // Leere Zellen
 		$pdf->SetFont('','B');
 		$pdf->SetFillColor(255,204,153);
-      $pdf->Cell($w[2]+$w[3],6,'Total zu bezahlen incl. MWST','LRB',0,'R',0);
+      $pdf->Cell($w[2]+$w[3],6,'Total zu bezahlen inkl. MWST','LRB',0,'R',0);
 		$pdf->Cell($w[4],6,number_format($total+$mwst,2,",","`"),'LRB',0,'R',1);
 		$pdf->Ln();
     return $total;
