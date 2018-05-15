@@ -119,16 +119,19 @@
 	// Daten für die Arbeitsbeschriebgruppierten Zeilen
 	$data = array();
 	// SQL zum Auswählen von den Stunden, Gruppiert nach dem Arbeitsbeschrieb
-	$sql  = 'SELECT `rap_stunden`.`date`,`rap_arbeit`.`name` AS `arbeitsbeschrieb`, `rap_vertrag`.`nettoansatz`, SUM(`rap_stunden`.`stunden`) AS `total`   
-	FROM rap_stunden 
-	LEFT JOIN rap_vertrag ON (`rap_stunden`.`vertrag`    = `rap_vertrag`.`ID`) 
-	LEFT JOIN rap_arbeit  ON (`rap_stunden`.`arbeit`     = `rap_arbeit`.`ID`) 
-	WHERE  
-	`rap_vertrag`.`ID` = '.$vertrag.' AND 
-	`rap_stunden`.`date` >= \''.$von.'\' AND 
-	`rap_stunden`.`date` <= \''.$bis.'\' 
-	GROUP BY `rap_arbeit`.`name`   
-	ORDER BY `rap_stunden`.`date` DESC';
+	$sql  = 'SELECT rap_stunden.date,
+            rap_arbeit.name AS arbeitsbeschrieb,
+            rap_vertrag.nettoansatz,
+            SUM(rap_stunden.stunden) AS total
+	FROM rap_stunden
+	LEFT JOIN rap_vertrag ON (rap_stunden.vertrag = rap_vertrag.ID)
+	LEFT JOIN rap_arbeit  ON (rap_stunden.arbeit  = rap_arbeit.ID)
+	WHERE
+	rap_vertrag.ID = '.$vertrag.' AND
+	rap_stunden.date >= \''.$von.'\' AND
+	rap_stunden.date <= \''.$bis.'\'
+	GROUP BY rap_arbeit.name
+	ORDER BY rap_stunden.date DESC';
 	echo $sql;
 	$db->query($sql);
 	while($l = $db->results()) {
