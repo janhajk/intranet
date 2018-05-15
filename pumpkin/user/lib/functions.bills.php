@@ -35,7 +35,7 @@ function getRechnungsTotal($RechnNr) {
 	while($l = $db->results()) {
 		$total = $l['total'];
 	}
-	return round($total*getVertragsFee($vertrag)/5,2)*5;
+	return round($total*getVertragsFee($vertrag)/5,2)*5;  // Auf fünf Rappen runden
 }
 
 function getVertragsFee($vertrag) {
@@ -168,7 +168,7 @@ function getBillsOpenBetrag() {
 		$a[] = $r['id'];
 	}
 	foreach($a as $aa) { $total += getRechnungsTotal($aa); }
-	return $total;	
+	return $total;
 }
 
 
@@ -253,10 +253,10 @@ function einzahlungsschein($pdf, $totalbetrag) {
 		$pdf->rect($x+3+$k*6, $y+6+$i*13.5,4,5,'FD');
 		$pdf->rect($x+3+$k*7, $y+6+$i*13.5,4,5,'FD');
 		$pdf->rect($x+3+$k*8, $y+6+$i*13.5,4,5,'FD');
-		
+
 		$pdf->rect($x+3+$k*10, $y+6+$i*13.5,4,5,'FD');
 		$pdf->rect($x+3+$k*11, $y+6+$i*13.5,4,5,'FD');
-	// Betrag
+	   // Betrag
 		$pdf->SetFont('helvetica','B',12);
 		$pdf->SetTextColor(0, 0, 0);
 		$pdf->Text($x+3+$k*9+1.5, $y+6+$i*13.5+5,'.');	// Punkt
@@ -273,11 +273,11 @@ function einzahlungsschein($pdf, $totalbetrag) {
 		// Rappen
 		$pdf->Text($x+3+$k*10+1.5, $y+6+$i*13.5+4.5,$rappen[0]);	
 		$pdf->Text($x+3+$k*11+1.5, $y+6+$i*13.5+4.5,$rappen[1]);
-	// Zahlungszweck / Rechnungsnummer
-			$pdf->SetFont('helvetica','B',8);
-			$pdf->SetTextColor(0, 0, 0);
-			$pdf->Text($x+70, $y+15, 'R-Nr. '.$GLOBALS['nr']);
-		
+	   // Zahlungszweck / Rechnungsnummer
+		$pdf->SetFont('helvetica','B',8);
+		$pdf->SetTextColor(0, 0, 0);
+		$pdf->Text($x+70, $y+15, 'R-Nr. '.$GLOBALS['nr']);
+
 }
 function swisscross($x, $y, $pdf) {
 	$pdf->SetLineWidth(0.1);
@@ -318,7 +318,7 @@ function make_background($pdf) {
 	$pdf->Cell(190,4,'e-mail: '.$config['email'],0,1,'R',0);
 	$pdf->Cell(190,4,'internet: '.$config['www'],0,1,'R',0);
    $pdf->Cell(190,4,'UID: '.$config['uid'],0,1,'R',0);
-   
+
 	// Rechnugsnummer
 	$pdf->SetY(45);
 	$pdf->SetFont('helvetica','B',9);
@@ -336,8 +336,8 @@ function Abrechnungstabelle($header,$data, $pdf)
     // Breite der Spalten in mm (Total=191)
     $w=array(23,87,26,27,28);
     $pdf->SetLineWidth(.6);
-	$pdf->Cell(array_sum($w),0,'','T');  // Letzte Linie unten
-	$pdf->Ln();
+	 $pdf->Cell(array_sum($w),0,'','T');  // Letzte Linie unten
+	 $pdf->Ln();
     $pdf->SetLineWidth(.1);
     for($i=0;$i<count($header);$i++)
         $pdf->Cell($w[$i],10,$header[$i],1,0,'C',1);
@@ -355,31 +355,35 @@ function Abrechnungstabelle($header,$data, $pdf)
         $pdf->Cell($w[1],6,utf8_decode($row['arbeitsbeschrieb']),'LR',0,'L',$fill);
         $pdf->Cell($w[2],6,number_format($row['nettoansatz'],2,",","`"),'LR',0,'R',$fill);
         $pdf->Cell($w[3],6,(round($row['total'],2)),'LR',0,'R',$fill);
-		$pdf->Cell($w[4],6,number_format($row['nettoansatz']*$row['total'],2,",","`"),'LR',0,'R',$fill);
-		$total+=$row['nettoansatz']*$row['total'];
+		  $pdf->Cell($w[4],6,number_format($row['nettoansatz']*$row['total'],2,",","`"),'LR',0,'R',$fill);
+		  $total+=$row['nettoansatz']*$row['total'];
         $pdf->Ln();
         $fill=!$fill;
     }
     $pdf->Cell(array_sum($w),0,'','T');  // Letzte Linie unten
-	$pdf->Ln();
-	$fill = 0;
-		// Totale
-        $pdf->Cell($w[0],6,'',0,0,'C',$fill);$pdf->Cell($w[1],6,'',0,0,'L',$fill);  // Leere Zellen
-        $pdf->Cell($w[2]+$w[3],6,'Total ohne MWST','LRB',0,'R',$fill);
+	 $pdf->Ln();
+	 $fill = 0;
+		// Total exkl. MWST
+      $pdf->Cell($w[0],6,'',0,0,'C',$fill);$pdf->Cell($w[1],6,'',0,0,'L',$fill);  // Leere Zellen
+      $pdf->Cell($w[2]+$w[3],6,'Total ohne MWST','LRB',0,'R',$fill);
 		$pdf->Cell($w[4],6,number_format($total,2,",","`"),'LRB',0,'R',$fill);
 		$pdf->Ln();
-        $pdf->Cell($w[0],6,'',0,0,'C',$fill);$pdf->Cell($w[1],6,'',0,0,'L',$fill);  // Leere Zellen
-        $pdf->Cell($w[2]+$w[3],6,'MWST zum Satz von 7.7%','LRB',0,'R',$fill);
-		$pdf->Cell($w[4],6,'keine MWST','LRB',0,'R',$fill);
+      // MWST
+      $mwst = ((float) $config['mwst']) * $total / 100;
+      $pdf->Cell($w[0],6,'',0,0,'C',$fill);$pdf->Cell($w[1],6,'',0,0,'L',$fill);  // Leere Zellen
+      $pdf->Cell($w[2]+$w[3],6,'MWST zum Satz von '.$config['mwst'].'%','LRB',0,'R',$fill);
+		$pdf->Cell($w[4],6,number_format($mwst,2,",","`"),'LRB',0,'R',$fill);
 		$pdf->Ln();
-        $pdf->Cell($w[0],6,'',0,0,'C',$fill);$pdf->Cell($w[1],6,'',0,0,'L',$fill);  // Leere Zellen
+      // Total inkl. MWST
+      $pdf->Cell($w[0],6,'',0,0,'C',$fill);$pdf->Cell($w[1],6,'',0,0,'L',$fill);  // Leere Zellen
 		$pdf->SetFont('','B');
 		$pdf->SetFillColor(255,204,153);
-        $pdf->Cell($w[2]+$w[3],6,'Total zu bezahlen incl. MWST','LRB',0,'R',0);
-		$pdf->Cell($w[4],6,number_format($total,2,",","`"),'LRB',0,'R',1);
+      $pdf->Cell($w[2]+$w[3],6,'Total zu bezahlen incl. MWST','LRB',0,'R',0);
+		$pdf->Cell($w[4],6,number_format($total+$mwst,2,",","`"),'LRB',0,'R',1);
 		$pdf->Ln();
     return $total;
 }
+
 
 
 // **************************************************************************************************
