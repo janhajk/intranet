@@ -132,7 +132,7 @@
 	rap_stunden.date <= \''.$bis.'\'
 	GROUP BY rap_arbeit.name
 	ORDER BY rap_stunden.date DESC';
-	echo $sql;
+	//echo $sql;
 	$db->query($sql);
 	while($l = $db->results()) {
 		$data[] = $l;

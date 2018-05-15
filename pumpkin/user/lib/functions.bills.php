@@ -350,7 +350,7 @@ function Abrechnungstabelle($header,$data, $pdf)
     //Data
     $fill=0;
 	 $total = 0;
-    echo '<pre>'.print_r($data, true).'</pre>';
+    //echo '<pre>'.print_r($data, true).'</pre>';
     foreach($data as $row)
     {
         $pdf->Cell($w[0],6,$GLOBALS['bis'],'LR',0,'C',$fill);
