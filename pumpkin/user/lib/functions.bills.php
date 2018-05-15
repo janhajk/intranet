@@ -383,7 +383,7 @@ function Abrechnungstabelle($header,$data, $pdf)
       $pdf->Cell($w[2]+$w[3],6,'Total zu bezahlen inkl. MWST','LRB',0,'R',0);
 		$pdf->Cell($w[4],6,number_format($total+$mwst,2,",","`"),'LRB',0,'R',1);
 		$pdf->Ln();
-    return $total;
+    return $total+$mwst;
 }
 
 
