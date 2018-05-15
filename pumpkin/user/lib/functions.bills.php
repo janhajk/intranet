@@ -327,6 +327,7 @@ function make_background($pdf) {
 }
 function Abrechnungstabelle($header,$data, $pdf)
 {
+    $config = getConfig();
     //Colors, line width and bold font
     $pdf->SetFillColor(219,229,241);
     $pdf->SetTextColor(0);
