@@ -96,10 +96,10 @@
 	$pdf->Cell(190,5,$config['myname'],0,1,'L',0);
 	// Kontoinformation
 	$pdf->SetFont('helvetica','',8);
-	$pdf->Text(135,260,'Bitte den Betrag innerhalb von 30 Tagen');
-	$pdf->Text(135,264,'auf folgendes Konto einzahlen:');
-	$pdf->Text(135,268,$config['myname'].', '.$config['strasse'].', '.$config['plz'].' '.$config['ort']);
-	$pdf->Text(135,272,'IBAN: '.$config['iban']);
+	$pdf->Text(130,260,'Bitte den Betrag innerhalb von 30 Tagen');
+	$pdf->Text(130,264,'auf folgendes Konto einzahlen:');
+	$pdf->Text(130,268,$config['myname'].', '.$config['strasse'].', '.$config['plz'].' '.$config['ort']);
+	$pdf->Text(130,272,'IBAN: '.$config['iban']);
 // **************************************************************************************************
 	// Empfänger
 	$pdf->SetY(55);
