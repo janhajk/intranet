@@ -96,7 +96,6 @@ function get_Vertragstotal_since_last_bill($vertrag) {
 	`rap_stunden`.`date` <= \''.$bis.'\' 
 	GROUP BY `rap_arbeit`.`name` 
 	ORDER BY `rap_stunden`.`date` DESC';
-	//echo $sql; 
 	$db->query($sql);
 	while($l = $db->results()) {
 		$data[] = $l;
