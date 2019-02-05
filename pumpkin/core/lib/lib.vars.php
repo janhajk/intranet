@@ -24,7 +24,7 @@
 	$proot = explode('/',dirname(__FILE__));
 	$key = array_search('pumpkin',$proot);
 	for($i=0;$i<=$key;$i++) { $pmkroot .= $proot[$i].'/'; }
-	define('PMKROOT', substr($pmkroot,0,strlen($pmkroot)-2));
+	define('PMKROOT', substr($pmkroot,0,strlen($pmkroot)-1));
 	
 	// Global PMKHTTP
 	// HTTP Adresse von pumpkin relativ zu domain sans trailing '/' 
@@ -33,7 +33,7 @@
 	$key2 = array_search('pumpkin',$proot);
 	$pmkroot = '';
 	for($i=$key1+1;$i<=$key2;$i++) { $pmkroot .= $proot[$i].'/'; }
-	$pmkroot = substr($pmkroot,0,strlen($pmkroot)-2);
+	$pmkroot = substr($pmkroot,0,strlen($pmkroot)-1);
 	define('PMKHTTP',$pmkroot);
 	
 	// Addons Pfade
