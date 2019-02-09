@@ -132,7 +132,6 @@
 	rap_stunden.date <= \''.$bis.'\'
 	GROUP BY rap_arbeit.name
 	ORDER BY rap_stunden.date DESC';
-	 echo $sql;
 	if (!$db->query($sql)) {
 		echo '<p>'.$db->errormessage.'</p><p>'.$sql.'</p>';
 		exit();
