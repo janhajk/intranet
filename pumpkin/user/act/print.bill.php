@@ -134,7 +134,7 @@
 	ORDER BY rap_stunden.date DESC';
 	 echo $sql;
 	if (!$db->query($sql)) {
-		echo '<p>'$db->errormessage.'</p><p>'.$sql.'</p>';
+		echo '<p>'.$db->errormessage.'</p><p>'.$sql.'</p>';
 		exit();
 	}
 	while($l = $db->results()) {
