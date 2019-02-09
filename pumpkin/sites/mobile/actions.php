@@ -54,7 +54,6 @@
 			case 'makeBill':
 				if(canEnterBinary('0.0.0.0.0.0.0.0.0.1')) {
 					$von = "2000-01-01";	// default Datum wenn noch keine Rechnung vorhanden
-					$msg = "SELECT * FROM rap_bills WHERE vertrag = '".$_POST['v']."' ORDER BY bis DESC LIMIT 1";
 					$db->query("SELECT * FROM rap_bills WHERE vertrag = '".$_POST['v']."' ORDER BY bis DESC LIMIT 1");
 					while($l = $db->results()) {
 						$von = $l['bis'];  // Datum von letzter Rechnung
@@ -62,7 +61,8 @@
 					$von = date("Y-m-d", strtotime($von.' + 1 day'));  // Ein Tag mehr als letzte Rechnung
 					$sql = "INSERT INTO rap_bills (`id`, `vertrag`, `von`,`bis`, `status`) VALUES ('', '".$_POST['v']."', '$von', NOW(),'0')";
 					if(!$db->query($sql)){echo '<br />'.$db->errormessage.'<br />'.$sql;}
-					//$msg = "Rechnung erstellt!";
+					$msg = "Rechnung erstellt!";
+					$msg = $sql;
 				}
 				break;
 			case 'updateConfig':
