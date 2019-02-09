@@ -46,9 +46,14 @@
 				break;
 			case 'addArbeit':
 				if(canEnterBinary('0.0.0.0.0.0.0.0.0.1')) {
-					$sql = "INSERT INTO rap_arbeit (`ID`, `name`) VALUES ('', '".$_POST['name']."')";
-					if(!$db->query($sql)){echo $db->errormessage.'<br />'.$sql;}
-					$msg = "Arbeit hinzugef&uuml;gt!";
+					$sql = "INSERT INTO rap_arbeit (name) VALUES ('".$_POST['name']."')";
+					if(!$db->query($sql)){
+						$msq = $db->errormessage.'</br>'.$sql;
+						
+					}
+					else {
+						$msg = "Arbeit hinzugef&uuml;gt!";
+					}
 				}
 				break;
 			case 'makeBill':
