@@ -60,8 +60,10 @@
 					}
 					$von = date("Y-m-d", strtotime($von.' + 1 day'));  // Ein Tag mehr als letzte Rechnung
 					$sql = "INSERT INTO rap_bills (vertrag, von,bis, status) VALUES ('".$_POST['v']."', '$von', NOW(),'0')";
-					if(!$db->query($sql)){echo '<br />'.$db->errormessage.'<br />'.$sql;}
-					$msg = "Rechnung erstellt!";
+					if(!$db->query($sql)){$msq = $db->errormessage.'</br>'.$sql;}
+					else {
+						$msg = "Rechnung erstellt!";
+					}
 				}
 				break;
 			case 'updateConfig':
