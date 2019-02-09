@@ -55,6 +55,7 @@
 				if(canEnterBinary('0.0.0.0.0.0.0.0.0.1')) {
 					$von = "2000-01-01";	// default Datum wenn noch keine Rechnung vorhanden
 					$db->query("SELECT * FROM rap_bills WHERE vertrag = '".$_POST['v']."' ORDER BY bis DESC LIMIT 1");
+					echo("SELECT * FROM rap_bills WHERE vertrag = '".$_POST['v']."' ORDER BY bis DESC LIMIT 1");
 					while($l = $db->results()) {
 						$von = $l['bis'];  // Datum von letzter Rechnung
 					}
