@@ -130,7 +130,7 @@
 	rap_vertrag.ID = '.$vertrag.' AND
 	rap_stunden.date >= \''.$von.'\' AND
 	rap_stunden.date <= \''.$bis.'\'
-	GROUP BY rap_arbeit.name
+	GROUP BY rap_arbeit.name, rap_stunden.date
 	ORDER BY rap_stunden.date DESC';
 	if (!$db->query($sql)) {
 		echo '<p>'.$db->errormessage.'</p><p>'.$sql.'</p>';
